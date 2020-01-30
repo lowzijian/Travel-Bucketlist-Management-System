@@ -1,0 +1,150 @@
+/*Refer _variable.scss for theme color*/
+
+/* scroll bar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #dcdcec;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #a3a0c6;
+}
+
+html,
+body {
+    background-color: #fff;
+    color: #636b6f;
+    font-family: "Nunito", sans-serif;
+    font-weight: 200;
+    height: 100vh;
+    margin: 0;
+}
+
+/*body and its content container*/
+.flex-center {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.content {
+    text-align: center;
+    align-content: center;
+    margin-bottom: 30px;
+}
+
+.full-height {
+    height: 100vh;
+}
+
+/*Footer */
+footer {
+    background-color: #4b3399;
+    text-align: center;
+    padding: 5px;
+    justify-content: center;
+    background-position: center;
+}
+
+.footerText {
+    color: whitesmoke;
+    font-size: 12px;
+}
+
+/*Input form*/
+
+.inputform {
+    flex-direction: column;
+}
+
+.input-form-container {
+    border-radius: 25px;
+    border: 1px solid #4b3399;
+    padding: 15px;
+}
+
+.input-container {
+    margin: 20px;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.input-form-icon {
+    padding-right: 15px;
+    color: #00003f;
+}
+
+.errorHelperText {
+    color: #e3342f;
+    font-size: 13px;
+    text-align: center;
+}
+
+.helperText {
+    color: black;
+    font-size: 13px;
+    font-weight: 500;
+    text-align: center;
+}
+
+::placeholder {
+    color: lightgray;
+}
+
+/*Href link*/
+.link {
+    color: #1c1471;
+    font-weight: bold;
+}
+
+.link:hover {
+    color: #00003f;
+    font-size: 15px;
+}
+
+/*Fonts*/
+
+.caption {
+    font-size: 18px;
+    font-weight: 600;
+    color: #1c1471;
+}
+
+.title {
+    font-size: 25px;
+    font-weight: bold;
+    color: #1c1471;
+}
+
+/* button */
+.btnPrimary {
+    border-radius: 15px;
+    border: 1px solid #4b3399;
+    padding: 15px;
+    width: 100px;
+    background-color: #1c1471;
+    color: white;
+}
+
+.btnPrimary:hover {
+    background-color: #4b3399;
+}
+
+.btnWarning {
+    border-radius: 15px;
+    border: 1px solid red;
+    padding: 15px;
+    width: 100px;
+    background-color: #e3342f;
+    color: white;
+}
+
+.btnWarning:hover {
+    background-color: red;
+}
