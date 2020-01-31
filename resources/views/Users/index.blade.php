@@ -35,8 +35,8 @@
     </div>
 
     <nav class="container" style="padding-Bottom:0px">
-        <a class="navigationItem active" href="#"><i class="fa fa-home"></i> Home</a>
-        <a class="navigationItem" href="#"><i class="fa fa-plus-square"></i> Create</a>
+        <a class="navigationItem active" href="{{ url('/home')}}"><i class="fa fa-home"></i> Home</a>
+        <a class="navigationItem " href="{{ url('/create')}}"><i class="fa fa-plus-square"></i> Create</a>
         <a class="navigationItem" href="{{ url('/')}}"><i class="fa fa-sign-out-alt"></i></a>
     </nav>
 </header>
@@ -47,7 +47,7 @@
         <div style="margin:15px;width:70%">
             <p class="title" style="margin-bottom:0px">Welcome back <span class="displayName">Chin Kai Xiang</span></p>
             <p>Total visited<i class="fa fa-city icon"></i> : <span class="numofcities">25</span></p>
-            <p class = "caption">Last updated at 30-1-2020</p>
+            <p class="caption">Last updated at 30-1-2020</p>
         </div>
 
         <div class="content" style="margin:15px;width:80%;overflow:scroll;">
