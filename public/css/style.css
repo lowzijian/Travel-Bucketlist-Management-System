@@ -40,7 +40,11 @@ body {
 }
 
 .full-height {
-    height: 100vh;
+    /* height: 100vh; */
+}
+
+fieldset {
+    border: none;
 }
 
 /*Footer */
@@ -61,6 +65,8 @@ footer {
 
 .inputform {
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .input-form-container {
@@ -72,7 +78,13 @@ footer {
 .input-container {
     margin: 20px;
     flex-direction: row;
-    justify-content: space-between;
+}
+
+.input-container-center {
+    display: flex;
+    width: 300px;
+    justify-content: center;
+    align-items: center;
 }
 
 .input-form-icon {
@@ -80,11 +92,7 @@ footer {
     color: #00003f;
 }
 
-.errorHelperText {
-    color: #e3342f;
-    font-size: 13px;
-    text-align: center;
-}
+
 
 .helperText {
     color: black;
@@ -110,7 +118,7 @@ footer {
 
 /*Fonts*/
 
-.caption {
+.quote {
     font-size: 18px;
     font-weight: 600;
     color: #1c1471;
@@ -122,6 +130,28 @@ footer {
     color: #1c1471;
 }
 
+.caption {
+    font-size: 13px;
+    color: #a3a0c6;
+}
+
+.suggestHelperText {
+    font-size: 13px;
+    color: darkgray;
+    font-weight: bold;
+}
+
+.errorHelperText {
+    color: #e3342f;
+    font-size: 13px;
+    text-align: center;
+}
+
+label
+{
+    font-weight: bold;
+    color: #4b3399;
+}
 /* button */
 .btnPrimary {
     border-radius: 15px;
@@ -130,10 +160,20 @@ footer {
     width: 100px;
     background-color: #1c1471;
     color: white;
+    font-family: "Nunito", sans-serif;
+    font-weight: 500;
+
 }
 
 .btnPrimary:hover {
     background-color: #4b3399;
+}
+
+.btnPrimary:disabled {
+    background-color: #dcdcec;
+    color: white;
+    border: none;
+
 }
 
 .btnWarning {
@@ -143,8 +183,25 @@ footer {
     width: 100px;
     background-color: #e3342f;
     color: white;
+    font-family: "Nunito", sans-serif;
+    font-weight: 600;
+
 }
 
 .btnWarning:hover {
     background-color: red;
+}
+
+.btnCancel {
+    border: none;
+    padding: 15px;
+    width: 100px;
+    background-color: transparent;
+    color: #D9534F;
+    font-family: "Nunito", sans-serif;
+}
+
+.btnCancel:hover {
+    font-weight: 600;
+    color:#B32B26;
 }
