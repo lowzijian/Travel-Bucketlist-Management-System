@@ -111,7 +111,7 @@
 </body>
 
 <footer>
-    <p class="footerText">Travel Bucketlist management system &#9400; Created by Chin Kai Xiang , Tan Chee Kuan , Low Zi Jian.</p>
+    <p class="footerText">Travel Bucketlist management system &copy; Created by Chin Kai Xiang , Tan Chee Kuan , Low Zi Jian.</p>
 </footer>
 
 </html>
