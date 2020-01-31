@@ -23,3 +23,7 @@ Route::get('/register', function () {
 Route::get('/home', function () {
     return view('Users.index');
 });
+
+Route::get('/create', function () {
+    return view('Users.create');
+});
