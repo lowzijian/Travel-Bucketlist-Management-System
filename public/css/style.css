@@ -73,6 +73,8 @@ header {
 
 .navigationItem:hover {
     background-color: #00003f;
+    text-decoration: none;
+    color: white;
 }
 
 .navigationItem:active {
