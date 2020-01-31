@@ -48,6 +48,11 @@ fieldset {
     border: none;
 }
 
+.withMarginVertical {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
 .container {
     margin: 0 auto;
     flex-direction: row;
@@ -107,7 +112,7 @@ footer {
 }
 
 .input-form-container {
-    border-radius: 25px;
+    border-radius: 15px;
     border: 1px solid #4b3399;
     padding: 15px;
 }
@@ -196,6 +201,7 @@ footer {
 label {
     font-weight: bold;
     color: #4b3399;
+    font-size: 20px;
 }
 
 /*Icon*/
@@ -302,7 +308,7 @@ label {
     text-overflow: ellipsis;
 }
 
-/*Travel gallery image fonts*/
+/*Travel gallery Card Info*/
 .travelTitle {
     font-size: 20px;
     font-weight: bold;
@@ -321,3 +327,17 @@ label {
     display: block;
     text-align: justify;
 }
+
+
+
+/* .locationCard {
+    border-radius: 20px;
+    border: 1px solid #3c2294;
+    background-color: white;
+    padding:10px;
+    color:white;
+}
+
+.locationCardImage {
+    border-radius:25px;
+} */
