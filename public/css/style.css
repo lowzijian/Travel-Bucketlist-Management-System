@@ -52,10 +52,9 @@ fieldset {
     margin: 0 auto;
     flex-direction: row;
     display: flex;
-    justify-content: flex-start;
     align-items: center;
     padding: 15px;
-    width: 80%;
+    width: 90%;
 }
 
 header {
@@ -91,9 +90,7 @@ footer {
     text-align: center;
     padding: 5px;
     justify-content: center;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
+
 }
 
 .footerText {
