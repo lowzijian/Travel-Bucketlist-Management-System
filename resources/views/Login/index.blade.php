@@ -30,7 +30,7 @@
     <div class="flex-center full-height">
         <div class="content">
             <img src="/asset/img/travel_bucketlist_logo.png" alt="Travel Bucketlist logo" style="width:500px;height:300px;min-width:200px">
-            <p class="caption" id="quote"></p>
+            <p class="quote" id="quote"></p>
         </div>
 
         <p class="title">Welcome to Travel Bucketlist</p>
