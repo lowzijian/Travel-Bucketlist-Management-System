@@ -28,7 +28,7 @@
 <body onload="typeWriter()">
 
     <div class="flex-center full-height">
-        <div class="content">
+        <div class="content" style="margin-Bottom:0px">
             <img src="/asset/img/travel_bucketlist_logo.png" alt="Travel Bucketlist logo" style="width:500px;height:300px;min-width:200px">
             <p class="quote" id="quote"></p>
         </div>
@@ -55,8 +55,7 @@
 
         </form>
 
-        <p style="margin-Bottom:30px;margin-Top:30px;" class="helperText">Don't have an account? <a class="link"
-        href="{{ url('register')}}"> Sign up </a> </p>
+        <p style="margin-Bottom:30px;margin-Top:30px;" class="helperText">Don't have an account? <a class="link" href="{{ url('register')}}"> Sign up </a> </p>
 
     </div>
 
