@@ -50,7 +50,7 @@
             <p class="errorHelperText">Incorrect Username & Password</p>
 
             <div class="content">
-                <button class="btnPrimary" type="button">Login</button>
+                <button class="btnPrimary" type="button" onclick=" window.location.href= `{{ url('/home')}}`">Login</button>
             </div>
 
         </form>
