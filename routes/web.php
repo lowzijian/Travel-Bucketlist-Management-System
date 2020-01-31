@@ -18,3 +18,8 @@ Route::get('/', function () {
 Route::get('/register', function () {
     return view('Register.index');
 });
+
+
+Route::get('/home', function () {
+    return view('Users.index');
+});
