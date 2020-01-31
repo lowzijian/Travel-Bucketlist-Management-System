@@ -20,18 +20,17 @@
     <!-- Styles -->
     <link href="\css\style.css" rel="stylesheet">
 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 
 </head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <body onload="typeWriter()">
 
     <div class="flex-center full-height">
         <div class="content">
-            <img src="/asset/img/travel_bucketlist_logo.png" alt="Travel Bucketlist logo" style="width:500px;height:300px;">
+            <img src="/asset/img/travel_bucketlist_logo.png" alt="Travel Bucketlist logo" style="width:500px;height:300px;min-width:200px">
             <p class="caption" id="quote"></p>
-
-
         </div>
 
         <p class="title">Welcome to Travel Bucketlist</p>
