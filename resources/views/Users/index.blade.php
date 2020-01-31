@@ -44,7 +44,7 @@
 <body style="min-height:80%">
     <div class="flex-center full-height">
 
-        <div style="margin:15px;width:80%">
+        <div style="margin:15px;width:70%">
             <p class="title" style="margin-bottom:0px">Welcome back <span class="displayName">Chin Kai Xiang</span></p>
             <p>Total visited<i class="fa fa-city icon"></i> cities : <span class="numofcities">25</span></p>
         </div>
