@@ -55,7 +55,8 @@
 
         </form>
 
-        <p style="margin-Bottom:30px;margin-Top:30px;" class="helperText">Don't have an account? <a class="link" href="https://www.w3schools.com"> Sign up </a> </p>
+        <p style="margin-Bottom:30px;margin-Top:30px;" class="helperText">Don't have an account? <a class="link"
+        href="{{ url('register')}}"> Sign up </a> </p>
 
     </div>
 
@@ -96,7 +97,7 @@
             `“Adventure is worthwhile.” – Aesop`,
             `“A journey is best measured in friends, rather than miles.” – Tim Cahill`
         ]
-        var txt =  quote[Math.floor(Math.random() * quote.length)]
+        var txt = quote[Math.floor(Math.random() * quote.length)]
         var speed = 50; /* The speed/duration of the effect in milliseconds */
 
         function typeWriter() {

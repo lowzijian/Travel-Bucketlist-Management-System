@@ -14,3 +14,7 @@
 Route::get('/', function () {
     return view('Login.index');
 });
+
+Route::get('/register', function () {
+    return view('Register.index');
+});
