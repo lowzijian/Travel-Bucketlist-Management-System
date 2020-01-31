@@ -92,7 +92,10 @@
             `“Travel makes one modest. You see what a tiny place you occupy in the world.” -Gustav Flaubert`,
             `“Traveling – it leaves you speechless, then turns you into a storyteller.” – Ibn Battuta`,
             `“To Travel is to Live” – Hans Christian Andersen`,
-            `“Travel and change of place impart new vigor to the mind.” – Seneca`
+            `“Travel and change of place impart new vigor to the mind.” – Seneca`,
+            `“Life is either a daring adventure or nothing at all” - Helen Keller`,
+            `“Adventure is worthwhile.” – Aesop`,
+            `“A journey is best measured in friends, rather than miles.” – Tim Cahill`
         ]
         var txt =  quote[Math.floor(Math.random() * quote.length)]
         var speed = 50; /* The speed/duration of the effect in milliseconds */
