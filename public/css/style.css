@@ -311,9 +311,11 @@ label {
     text-align: justify;
 }
 
-.travelCaption {
+
+.travelLocation {
     font-size: 14px;
-    color: #4b3399;
+    color: #3c2294;
+    font-weight: bold;
     overflow: hidden;
     text-overflow: ellipsis;
     display: block;

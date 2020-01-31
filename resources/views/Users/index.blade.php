@@ -46,10 +46,11 @@
 
         <div style="margin:15px;width:70%">
             <p class="title" style="margin-bottom:0px">Welcome back <span class="displayName">Chin Kai Xiang</span></p>
-            <p>Total visited<i class="fa fa-city icon"></i> cities : <span class="numofcities">25</span></p>
+            <p>Total visited<i class="fa fa-city icon"></i> : <span class="numofcities">25</span></p>
+            <p class = "caption">Last updated at 30-1-2020</p>
         </div>
 
-        <div class="content" style="margin:15px;width:80%">
+        <div class="content" style="margin:15px;width:80%;overflow:scroll;">
             <section id="gallery">
                 <div>
                     <div id="image-gallery">
@@ -62,8 +63,8 @@
                                     </div>
                                 </div>
                                 <div class="img-title-caption">
+                                    <p class="travelLocation"><i class="fa fa-map-marker-alt"></i> Bangkok , Thailand</p>
                                     <p class="travelTitle">Travel to Bangkok</p>
-                                    <p class="travelCaption">#Thailand #Great Foods</p>
                                 </div>
                             </div>
 
@@ -75,8 +76,8 @@
                                     </div>
                                 </div>
                                 <div class="img-title-caption">
+                                    <p class="travelLocation"><i class="fa fa-map-marker-alt"></i> Bangkok , Thailand</p>
                                     <p class="travelTitle">Travel to Bangkok</p>
-                                    <p class="travelCaption">#Thailand #Great Foods</p>
                                 </div>
                             </div>
 
@@ -88,8 +89,8 @@
                                     </div>
                                 </div>
                                 <div class="img-title-caption">
+                                    <p class="travelLocation"><i class="fa fa-map-marker-alt"></i> Bangkok , Thailand</p>
                                     <p class="travelTitle">Travel to Bangkok</p>
-                                    <p class="travelCaption">#Thailand #Great Foods</p>
                                 </div>
                             </div>
 
@@ -101,8 +102,8 @@
                                     </div>
                                 </div>
                                 <div class="img-title-caption">
+                                    <p class="travelLocation"><i class="fa fa-map-marker-alt"></i> Bangkok , Thailand</p>
                                     <p class="travelTitle">Travel to Bangkok</p>
-                                    <p class="travelCaption">#Thailand #Great Foods</p>
                                 </div>
                             </div>
                         </div><!-- End row -->
@@ -131,7 +132,7 @@
     </script>
 </body>
 
-<footer style="position: absolute;bottom: 0;width: 100%;">
+<footer>
     <p class="footerText">Travel Bucketlist management system &copy; Created by Chin Kai Xiang , Tan Chee Kuan , Low Zi Jian.</p>
 </footer>
 
