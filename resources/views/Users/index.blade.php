@@ -56,7 +56,7 @@
                     <div id="image-gallery">
                         <div class="row">
                             <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 image">
-                                <div class="img-wrapper">
+                                <div class="img-wrapper" onclick=" window.location.href= `{{ url('/show')}}`">
                                     <a href="https://unsplash.it/800"><img src="https://unsplash.it/800" class="img-responsive"></a>
                                     <div class="img-overlay">
                                         <i class="fa fa-plane" aria-hidden="true"></i>
@@ -65,12 +65,12 @@
                                 <div class="img-title-caption">
                                     <p class="travelLocation"><i class="fa fa-map-marker-alt"></i> Bangkok , Thailand</p>
                                     <p class="travelTitle">Travel to Bangkok</p>
-                                    <button class="btnOutlined" style="float:right;">Read More</button>
+                                    <button class="btnOutlined" style="float:right;" onclick=" window.location.href= `{{ url('/show')}}`">Read More</button>
                                 </div>
                             </div>
 
                             <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 image">
-                                <div class="img-wrapper">
+                                <div class="img-wrapper" onclick=" window.location.href= `{{ url('/show')}}`">
                                     <a href="https://unsplash.it/700"><img src="https://unsplash.it/700" class="img-responsive"></a>
                                     <div class="img-overlay">
                                         <i class="fa fa-plane" aria-hidden="true"></i>
@@ -79,13 +79,13 @@
                                 <div class="img-title-caption">
                                     <p class="travelLocation"><i class="fa fa-map-marker-alt"></i> Bangkok , Thailand</p>
                                     <p class="travelTitle">Travel to Bangkok</p>
-                                    <button class="btnOutlined" style="float:right;">Read More</button>
+                                    <button class="btnOutlined" style="float:right;" onclick=" window.location.href= `{{ url('/show')}}`">Read More</button>
 
                                 </div>
                             </div>
 
                             <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 image">
-                                <div class="img-wrapper">
+                                <div class="img-wrapper" onclick=" window.location.href= `{{ url('/show')}}`">
                                     <a href="https://unsplash.it/600"><img src="https://unsplash.it/600" class="img-responsive"></a>
                                     <div class="img-overlay">
                                         <i class="fa fa-plane" aria-hidden="true"></i>
@@ -94,13 +94,13 @@
                                 <div class="img-title-caption">
                                     <p class="travelLocation"><i class="fa fa-map-marker-alt"></i> Bangkok , Thailand</p>
                                     <p class="travelTitle">Travel to Bangkok</p>
-                                    <button class="btnOutlined" style="float:right;">Read More</button>
+                                    <button class="btnOutlined" style="float:right;" onclick=" window.location.href= `{{ url('/show')}}`">Read More</button>
 
                                 </div>
                             </div>
 
                             <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 image">
-                                <div class="img-wrapper">
+                                <div class="img-wrapper" onclick=" window.location.href= `{{ url('/show')}}`">
                                     <a href="https://unsplash.it/500"><img src="https://unsplash.it/500" class="img-responsive"></a>
                                     <div class="img-overlay">
                                         <i class="fa fa-plane" aria-hidden="true"></i>
@@ -109,7 +109,7 @@
                                 <div class="img-title-caption">
                                     <p class="travelLocation"><i class="fa fa-map-marker-alt"></i> Bangkok , Thailand</p>
                                     <p class="travelTitle">Travel to Bangkok</p>
-                                    <button class="btnOutlined" style="float:right;">Read More</button>
+                                    <button class="btnOutlined" style="float:right;" onclick=" window.location.href= `{{ url('/show')}}`">Read More</button>
                                 </div>
                             </div>
                         </div><!-- End row -->
