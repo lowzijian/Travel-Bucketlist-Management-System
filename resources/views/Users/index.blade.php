@@ -65,6 +65,7 @@
                                 <div class="img-title-caption">
                                     <p class="travelLocation"><i class="fa fa-map-marker-alt"></i> Bangkok , Thailand</p>
                                     <p class="travelTitle">Travel to Bangkok</p>
+                                    <button class="btnOutlined" style="float:right;">Read More</button>
                                 </div>
                             </div>
 
@@ -78,6 +79,8 @@
                                 <div class="img-title-caption">
                                     <p class="travelLocation"><i class="fa fa-map-marker-alt"></i> Bangkok , Thailand</p>
                                     <p class="travelTitle">Travel to Bangkok</p>
+                                    <button class="btnOutlined" style="float:right;">Read More</button>
+
                                 </div>
                             </div>
 
@@ -91,6 +94,8 @@
                                 <div class="img-title-caption">
                                     <p class="travelLocation"><i class="fa fa-map-marker-alt"></i> Bangkok , Thailand</p>
                                     <p class="travelTitle">Travel to Bangkok</p>
+                                    <button class="btnOutlined" style="float:right;">Read More</button>
+
                                 </div>
                             </div>
 
@@ -104,6 +109,7 @@
                                 <div class="img-title-caption">
                                     <p class="travelLocation"><i class="fa fa-map-marker-alt"></i> Bangkok , Thailand</p>
                                     <p class="travelTitle">Travel to Bangkok</p>
+                                    <button class="btnOutlined" style="float:right;">Read More</button>
                                 </div>
                             </div>
                         </div><!-- End row -->
