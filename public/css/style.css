@@ -23,7 +23,17 @@ body {
     font-family: "Nunito", sans-serif;
     font-weight: 200;
     height: 100vh;
-    margin: 0;
+    margin: 0 auto;
+}
+
+.divider {
+    display: block;
+    overflow: hidden;
+    border-style: inset;
+    border-width: 2px;
+    border: 2px solid #3c2294;
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 
 /*body and its content container*/
@@ -33,6 +43,7 @@ body {
     justify-content: center;
     flex-direction: column;
 }
+
 
 .content {
     text-align: center;
@@ -95,7 +106,6 @@ footer {
     text-align: center;
     padding: 5px;
     justify-content: center;
-
 }
 
 .footerText {
@@ -175,15 +185,33 @@ footer {
     color: #1c1471;
 }
 
+.hashtags {
+    font-size: 16px;
+    color: #a3a0c6;
+}
+
 .caption {
     font-size: 13px;
     color: #a3a0c6;
+}
+
+.author {
+    font-size: 16px;
+    font-weight: bold;
+    color: #4b3399;
 }
 
 .displayName {
     font-size: 30px;
     font-weight: bold;
     color: #4b3399;
+}
+
+.description {
+    font-size: 16px;
+    color: black;
+    font-weight: normal;
+    text-align: justify;
 }
 
 .suggestHelperText {
@@ -215,7 +243,7 @@ label {
 .btnPrimary {
     border-radius: 15px;
     border: 1px solid #4b3399;
-    padding: 15px;
+    padding: 10px;
     width: 100px;
     background-color: #1c1471;
     color: white;
@@ -236,7 +264,7 @@ label {
 .btnWarning {
     border-radius: 15px;
     border: 1px solid red;
-    padding: 15px;
+    padding: 10px;
     width: 100px;
     background-color: #e3342f;
     color: white;
@@ -250,7 +278,7 @@ label {
 
 .btnCancel {
     border: none;
-    padding: 15px;
+    padding: 10px;
     width: 100px;
     background-color: transparent;
     color: #d9534f;
@@ -260,6 +288,21 @@ label {
 .btnCancel:hover {
     font-weight: 600;
     color: #b32b26;
+}
+
+.btnOutlined {
+    border-radius: 15px;
+    border: 1px solid #4b3399;
+    padding: 5px;
+    width: 100px;
+    background-color: white;
+    color: #1c1471;
+    font-family: "Nunito", sans-serif;
+    font-weight: 500;
+}
+
+.btnOutlined:hover {
+    font-weight: 600;
 }
 
 /* Image Gallery*/
@@ -296,13 +339,13 @@ label {
 }
 
 .img-title-caption {
-    height: 100px;
+    height: 150px;
     background-color: white;
     border: 1px solid #a3a0c6;
     justify-content: center;
     width: 100%;
     text-align: center;
-    padding:10px;
+    padding: 10px;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
@@ -317,7 +360,6 @@ label {
     text-align: justify;
 }
 
-
 .travelLocation {
     font-size: 14px;
     color: #3c2294;
@@ -327,8 +369,6 @@ label {
     display: block;
     text-align: justify;
 }
-
-
 
 /* .locationCard {
     border-radius: 20px;
