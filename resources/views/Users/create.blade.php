@@ -123,7 +123,15 @@
                     </div>
                 </div>
 
+                <div class="row withMarginVertical">
 
+                    <div class="col-md-12">
+                        <label> <i class="fa fa-images"></i> Image</label>
+                        <p class="caption">Upload Images of your journey.</p>
+                    </div>
+
+                    <button class = "btnPrimary col-md-2">Upload Photos</button>
+                </div>
 
                 <div class="content withMarginVertical" style="flex-Direction:row; margin-Top:30px">
                     <button class="btnPrimary" type="submit" id="Create" name="Create" disabled>Create</button>
