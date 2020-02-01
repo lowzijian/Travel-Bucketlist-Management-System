@@ -27,3 +27,7 @@ Route::get('/home', function () {
 Route::get('/create', function () {
     return view('Users.create');
 });
+
+Route::get('/show', function () {
+    return view('Users.show');
+});
