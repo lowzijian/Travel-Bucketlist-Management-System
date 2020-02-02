@@ -154,7 +154,7 @@
                 </div>
 
 
-                <div class="withMarginVertical row" style="flex-Direction:row; margin-Top:30px">
+                <div class="withMarginVertical content">
                     <button class="btnPrimary" type="submit" id="Create" name="Create" disabled>Create</button>
                     <button class="btnCancel" type="button" onclick=" window.location.href= `{{ url('/home')}}`"> Cancel </button>
                 </div>
