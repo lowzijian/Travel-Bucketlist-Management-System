@@ -130,10 +130,31 @@
                         <p class="caption">Upload Images of your journey.</p>
                     </div>
 
-                    <button class = "btnPrimary col-md-2">Upload Photos</button>
+                    <button class="btnPrimary col-md-2">Upload Photos</button>
                 </div>
 
-                <div class="content withMarginVertical" style="flex-Direction:row; margin-Top:30px">
+                <div class="row withMarginVertical">
+
+                    <div class="col-md-12">
+                        <label> <i class="fa fa-heart"></i> Overall Experience</label>
+                        <p class="caption">Feedback your overall experience on your journey.</p>
+                    </div>
+
+                    <span>
+                        <select class="input-form-container required" id="emotionField" name="new_emotion">
+                            <option value="" selected disabled hidden>Select an emotion</option>
+                            <option value="Excited">Excited</option>
+                            <option value="Happy">Happy</option>
+                            <option value="Dissapoint">Dissapoint</option>
+                            <option value="Sad">Sad</option>
+                        </select>
+
+                        <i class = "fa fa-meh-blank icon" id="emoticon"></i>
+                    </span>
+                </div>
+
+
+                <div class="withMarginVertical row" style="flex-Direction:row; margin-Top:30px">
                     <button class="btnPrimary" type="submit" id="Create" name="Create" disabled>Create</button>
                     <button class="btnCancel" type="button" onclick=" window.location.href= `{{ url('/home')}}`"> Cancel </button>
                 </div>
@@ -163,6 +184,32 @@
                 $('#Create').prop("disabled", false);
             }
         })
+
+
+        document.addEventListener('DOMContentLoaded', function() {
+            $('#emotionField').on('change', function() {
+                let emoticons = document.getElementById('emotionField').value
+                console.log(emoticons)
+                switch (emoticons) {
+                    case 'Excited':
+                        $('#emoticon').find('[data-fa-i2svg]')
+                            .toggleClass('fa-laugh-beam')
+                        break;
+                    case 'Happy':
+                        $('#emoticon').find('[data-fa-i2svg]')
+                            .toggleClass('fa-smile')
+                        break;
+                    case 'Dissapoint':
+                        $('#emoticon').find('[data-fa-i2svg]')
+                            .toggleClass('fa-frown')
+                        break;
+                    case 'Sad':
+                        $('#emoticon').find('[data-fa-i2svg]')
+                            .toggleClass('fa-sad-tear')
+                        break;
+                }
+            });
+        });
     </script>
 </body>
 
