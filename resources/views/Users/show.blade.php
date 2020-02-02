@@ -50,7 +50,7 @@
             <div class="row divider"></div>
         </div>
 
-        <div class="col-md-9" style="margin:10px;height:80%;overflow:scroll;">
+        <div class="col-md-9" style="margin:10px;margin-top: 30px;">
             <div class="row">
                 <p class="title col-md-12">Travel to Bangkok</p>
                 <p class="travelLocation col-md-12" style="font-size:18px;"><i class="fa fa-map-marker-alt"></i> Bangkok , Thailand</p>
@@ -68,7 +68,7 @@
             <div class="row divider"></div>
 
             <div class="row">
-                <div class="col-md-12 row withMarginVertical">
+                <div class="col-md-12 row">
                     <p class="title col-sm-3">Travel Duration :</p>
                     <span style="display:grid; " class="col-sm-5">
                         <span class="title" style="color:#BDB4D9">15 days</span>
