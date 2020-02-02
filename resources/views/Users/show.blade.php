@@ -21,7 +21,14 @@
     <link href="\css\style.css" rel="stylesheet">
 
     <!--Bootstrap-->
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!--SWAL2-->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+
+    <script src="sweetalert2.all.min.js"></script>
+    <!-- Optional: include a polyfill for ES6 Promises for IE11 -->
+    <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -69,7 +76,7 @@
 
             <div class="row">
                 <div class="col-md-12 row">
-                    <p class="title col-sm-3">Travel Duration :</p>
+                    <p class="title col-sm-4">Travel Duration :</p>
                     <span style="display:grid; " class="col-sm-5">
                         <span class="title" style="color:#BDB4D9">15 days</span>
                         <span class="caption">Start from 11/7/2019 to 12/7/2019</span>
@@ -81,9 +88,41 @@
                     <span class="title col-sm-5" style="color:#BDB4D9">Happy</span>
                 </div>
             </div>
+
+            <div class="withMarginVertical content" style="float:right;">
+                <button class="btnPrimary" type="submit" id="Edit" name="Edit">Edit <i class="fa fa-edit"></i> </button>
+                <button class="btnWarning" type="button" onclick="deleteContent()"> <i class="fa fa-trash-alt"></i> </button>
+            </div>
         </div>
 
     </div>
+
+    <script>
+        function deleteContent() {
+            Swal.fire({
+                title: 'Are you sure?',
+                text: 'Do you really want to delete this memorable travel record? This process cannot be undone.',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#e3342f',
+                cancelButtonColor: '#C1C1C1',
+                confirmButtonText: 'Delete',
+            }).then((result) => {
+                if (result.value) {
+                    Swal.fire({
+                        allowOutsideClick: false,
+                        title: 'Deleted!',
+                        text: 'This record has been deleted.',
+                        icon: 'success',
+                    }).then((result) => {
+                        if (result.value) {
+                            window.location.href = `{{ url('/home')}}`;
+                        }
+                    })
+                }
+            })
+        }
+    </script>
 </body>
 
 
