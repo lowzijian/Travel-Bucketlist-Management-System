@@ -65,6 +65,22 @@
                 <img src="https://unsplash.it/800" class="img-responsive" style="object-fit:fill;height:350px;width:500px">
             </div>
 
+            <div class="row divider"></div>
+
+            <div class="row">
+                <div class="col-md-12 row withMarginVertical">
+                    <p class="title col-sm-3">Travel Duration :</p>
+                    <span style="display:grid; " class="col-sm-5">
+                        <span class="title" style="color:#BDB4D9">15 days</span>
+                        <span class="caption">Start from 11/7/2019 to 12/7/2019</span>
+                    </span>
+                </div>
+
+                <div class="col-md-12 row withMarginVertical">
+                    <p class="title col-sm-4">Overall Experience :</p>
+                    <span class="title col-sm-5" style="color:#BDB4D9">Happy</span>
+                </div>
+            </div>
         </div>
 
     </div>
