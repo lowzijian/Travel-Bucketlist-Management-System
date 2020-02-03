@@ -45,7 +45,7 @@ CREATE TABLE `travel_bucket_item` (
   `country_id` varchar(255),
   `title` varchar(255),
   `caption` varchar(255),
-  `description` boolean,
+  `description` varchar(255),
   `city` varchar(255),
   `StartDate` timestamp,
   `EndDate` int
@@ -62,7 +62,15 @@ CREATE TABLE `travel_bucket_country` (
   `languages` varchar(255)
 );
 
+CREATE TABLE `users` (
+  `id` int PRIMARY KEY AUTO_INCREMENT,
+  `username` varchar(255),
+  `password` varchar(255),
+  `displayName` varchar(255)
+);
+
 ALTER TABLE `travel_bucket_item` ADD FOREIGN KEY (`country_id`) REFERENCES `travel_bucket_country` (`id`);
+
 ````
 
 ### mySQL Model (Image)
