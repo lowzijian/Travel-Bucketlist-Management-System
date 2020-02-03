@@ -31,3 +31,7 @@ Route::get('/create', function () {
 Route::get('/show', function () {
     return view('Users.show');
 });
+
+Route::get('/countries', function () {
+    return view('Users.countries');
+});
