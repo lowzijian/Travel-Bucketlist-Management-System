@@ -30,12 +30,13 @@
 <header>
     <div class="container">
         <img src="/asset/img/travel_bucketlist_thumbnail.png" alt="Travel Bucketlist thumbnail">
-        <h1 style="color:White;">Travel Bucketlist </h1>
+        <h1 style="color:White;">The Travel Bucketlist</h1>
     </div>
 
     <nav class="container" style="padding-Bottom:0px">
         <a class="navigationItem " href="{{ url('/home')}}"><i class="fa fa-home"></i> Home</a>
         <a class="navigationItem active" href="{{ url('/create')}}"><i class="fa fa-plus-square"></i> Create</a>
+        <a class="navigationItem" href="{{ url('/countries')}}"><i class="fa fa-compass"></i> Countries</a>
         <a class="navigationItem" href="{{ url('/')}}"><i class="fa fa-sign-out-alt"></i></a>
     </nav>
 </header>
@@ -82,8 +83,8 @@
                 <div class="row withMarginVertical">
 
                     <div class="col-md-3 withMarginVertical">
-                        <label> <i class="fa fa-globe-americas"></i> Nation</label>
-                        <p class="caption">Select a Country</p>
+                        <label> <i class="fa fa-globe-americas"></i> Country</label>
+                        <p class="caption">Select from your ideal bucketlist's destination country</p>
 
 
                         <select class="input-form-container required" id="countryField" name="new_country">
@@ -97,15 +98,9 @@
 
                     <div class="col-md-3 withMarginVertical">
                         <label> <i class="fa fa-city"></i> City</label>
-                        <p class="caption">Select a City</p>
+                        <p class="caption">The destination of your journey</p>
 
-
-                        <select class="input-form-container required" id="cityField" name="new_city">
-                            <option value="" selected disabled hidden>Select a City</option>
-                            <option value="Bangkok">Bangkok</option>
-                            <option value="ChiangMai">Chiang Mai</option>
-                            <option value="HatYai">Hat Yai</option>
-                        </select>
+                        <input type="text" class="input-form-container required" placeholder="Enter a city name" id="cityField" name="new_city">
                     </div>
 
                     <div class="col-md-3 withMarginVertical">
@@ -149,7 +144,7 @@
                             <option value="Sad">Sad</option>
                         </select>
 
-                        <i class = "fa fa-meh-blank icon" id="emoticon"></i>
+                        <i class="fa fa-meh-blank icon" id="emoticon"></i>
                     </span>
                 </div>
 
