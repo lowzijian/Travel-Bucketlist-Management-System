@@ -44,7 +44,6 @@ body {
     flex-direction: column;
 }
 
-
 .content {
     text-align: center;
     align-content: center;
@@ -167,7 +166,7 @@ footer {
 }
 
 /*Fonts*/
-.numofcities {
+.num {
     color: #4b3399;
     font-size: 18px;
     font-weight: 600;
@@ -180,7 +179,7 @@ footer {
 }
 
 .title {
-    font-size: 25px;
+    font-size: 28px;
     font-weight: bold;
     color: #1c1471;
 }
@@ -370,14 +369,31 @@ label {
     text-align: justify;
 }
 
-/* .locationCard {
+/*Travel Bucket list Card */
+
+.bucketListCard {
     border-radius: 20px;
     border: 1px solid #3c2294;
     background-color: white;
-    padding:10px;
-    color:white;
+    padding: 10px;
+    color:#1c1471;
+    font-size: 16px;
 }
 
-.locationCardImage {
-    border-radius:25px;
-} */
+.locationTitle {
+    font-size: 25px;
+    font-weight: bold;
+    color: #1c1471;
+}
+
+.locationLabel {
+    font-size: 18px;
+    font-weight: bold;
+    color: #261d8f;
+}
+
+.locationRegion {
+    font-size: 16px;
+    font-weight: bold;
+    color: #a3a0c6;
+}
