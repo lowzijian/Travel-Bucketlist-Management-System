@@ -66,5 +66,20 @@ ALTER TABLE `travel_bucket_item` ADD FOREIGN KEY (`country_id`) REFERENCES `trav
 ````
 
 ### mySQL Model (Image)
-![Image of database modeal](https://github.com/lowzijian/Travel-Bucketlist-Management-System/blob/master/documentation/Search.PNG)
+![Image of database model](https://github.com/lowzijian/Travel-Bucketlist-Management-System/blob/master/documentation/Travel%20Bucket%20List%20Management%20System.png)
+
+### Relationship of the database model
+- 1 travel bucket country has 0..* travel bucket item 
+- 1 travel bucket item has 1..1 travel bucket country
+
+## How to we fetch the coutries information ? 
+We fetch information of country using restful API : <br>
+https://restcountries.eu/
+
+Get filtered response from the api: <br>
+ https://restcountries.eu/rest/v2/name/Afghanistan?fields=name;capital;currencies;flag;population;region;languages;
+
+## Sample of bucket list ideas that we used for demo 
+https://tourscanner.com/blog/bucket-list-ideas/
+
 
