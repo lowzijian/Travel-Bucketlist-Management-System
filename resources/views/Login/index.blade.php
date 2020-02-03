@@ -33,7 +33,7 @@
             <p class="quote" id="quote"></p>
         </div>
 
-        <p class="title">Welcome to Travel Bucketlist</p>
+        <p class="title">Welcome to The Travel Bucketlist</p>
 
         <form class="inputform">
             <div class="input-container">
