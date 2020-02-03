@@ -37,3 +37,34 @@ For further information about running the project , please look through
 https://devmarketer.io/learn/setup-laravel-project-cloned-github-com/
 
 
+## Database model
+### mySQL Model
+````
+CREATE TABLE `travel_bucket_item` (
+  `id` int PRIMARY KEY AUTO_INCREMENT,
+  `country_id` varchar(255),
+  `title` varchar(255),
+  `caption` varchar(255),
+  `description` boolean,
+  `city` varchar(255),
+  `StartDate` timestamp,
+  `EndDate` int
+);
+
+CREATE TABLE `travel_bucket_country` (
+  `id` int PRIMARY KEY AUTO_INCREMENT,
+  `name` varchar(255),
+  `capital` varchar(255),
+  `population` int,
+  `flag` varchar(255),
+  `currency` varchar(255),
+  `region` varchar(255),
+  `languages` varchar(255)
+);
+
+ALTER TABLE `travel_bucket_item` ADD FOREIGN KEY (`country_id`) REFERENCES `travel_bucket_country` (`id`);
+````
+
+### mySQL Model (Image)
+![Image of database modeal](https://github.com/lowzijian/Travel-Bucketlist-Management-System/blob/master/documentation/Search.PNG)
+
