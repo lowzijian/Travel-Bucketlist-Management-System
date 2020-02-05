@@ -1,27 +1,6 @@
-<!DOCTYPE html>
-<html>
+@extends('layouts.app')
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>Travel Bucketlist - Register an account</title>
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
-
-    <!--Font awesome -->
-    <script src="https://kit.fontawesome.com/51c8a4d077.js" crossorigin="anonymous"></script>
-    <script src="https://use.fontawesome.com/releases/v5.12.0/js/all.js" data-auto-replace-svg="nest"></script>
-
-    <!--Jquery-->
-    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
-
-    <!-- Styles -->
-    <link href="\css\style.css" rel="stylesheet">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-</head>
+@section('content')
 
 
 
@@ -135,8 +114,5 @@
     </script>
 </body>
 
-<footer>
-    <p class="footerText">Travel Bucketlist management system &copy; Created by Chin Kai Xiang , Tan Chee Kuan , Low Zi Jian.</p>
-</footer>
 
-</html>
+@endsection
