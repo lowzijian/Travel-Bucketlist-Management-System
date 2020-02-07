@@ -40,9 +40,9 @@ https://devmarketer.io/learn/setup-laravel-project-cloned-github-com/
 ## Database model
 ### mySQL Model
 ````
-CREATE TABLE `travel_bucket_item` (
+CREATE TABLE `travel_bucket_items` (
   `id` int PRIMARY KEY AUTO_INCREMENT,
-  `country_id` varchar(255),
+  `country_id` int,
   `title` varchar(255),
   `caption` varchar(255),
   `description` text,
@@ -50,10 +50,13 @@ CREATE TABLE `travel_bucket_item` (
   `photos` text,
   `start_date` timestamp,
   `end_date` timestamp,
+  `created_at` timestamp,
+  `updated_at` timestamp,
+  `experience` varchar(255),
   `user_id` int
 );
 
-CREATE TABLE `travel_bucket_country` (
+CREATE TABLE `travel_bucket_countries` (
   `id` int PRIMARY KEY AUTO_INCREMENT,
   `name` varchar(255),
   `capital` varchar(255),
@@ -61,20 +64,24 @@ CREATE TABLE `travel_bucket_country` (
   `flag` varchar(255),
   `currency` varchar(255),
   `region` varchar(255),
-  `languages` varchar(255)
+  `languages` varchar(255),
+  `created_at` timestamp,
+  `updated_at` timestamp
 );
 
 CREATE TABLE `users` (
   `id` int PRIMARY KEY AUTO_INCREMENT,
-  `username` varchar(255),
+  `email` varchar(255),
   `password` varchar(255),
-  `displayName` varchar(255),
-  `role` varchar(255)
+  `name` varchar(255),
+  `admin` varchar(255),
+  `created_at` timestamp,
+  `updated_at` timestamp
 );
 
-ALTER TABLE `travel_bucket_item` ADD FOREIGN KEY (`country_id`) REFERENCES `travel_bucket_country` (`id`);
+ALTER TABLE `travel_bucket_items` ADD FOREIGN KEY (`country_id`) REFERENCES `travel_bucket_countries` (`id`);
 
-ALTER TABLE `travel_bucket_item` ADD FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
+ALTER TABLE `travel_bucket_items` ADD FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
 
 
 ````
