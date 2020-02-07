@@ -29,9 +29,10 @@ class TravelBucketItemsController extends Controller
     public function create()
     {
         $travel_bucket_item = new Travel_bucket_item();
-
+        $countries = Travel_bucket_country::all();
         return view('Users.create', [
             'travel_bucket_item' => $travel_bucket_item,
+            'countries' => $countries
         ]);
     }
 
@@ -54,8 +55,9 @@ class TravelBucketItemsController extends Controller
         ) {
             $photoName = time() . '.' . request()->photos->getClientOriginalExtension();
             request()->photos->move(public_path('photos'), $photoName);
-            $path = public_path('photos') . "/" . $photoName;
-            $travel_bucket_item->photos = $path;
+            $path = "\\" . $photoName;
+            $imagePath = array($path);
+            $travel_bucket_item->photos = json_encode($imagePath);
         }
 
         $travel_bucket_item->save();
