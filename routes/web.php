@@ -15,9 +15,13 @@ Route::get('/', function () {
     return view('Login.index');
 });
 
+Route::post('/login', 'LoginController@authenticate');
+
 Route::get('/register', function () {
     return view('Register.index');
 });
+
+Route::post('/register', 'Auth\RegisterController@register');
 
 
 Route::get('/home', function () {
