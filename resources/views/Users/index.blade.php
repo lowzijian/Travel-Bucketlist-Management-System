@@ -4,7 +4,7 @@
 <header>
     <div class="container">
         <img src="/asset/img/travel_bucketlist_thumbnail.png" alt="Travel Bucketlist thumbnail">
-        <h1 style="color:White;">The Travel Bucketlist</h1>
+        <h1 style="color:white;padding-left: 15px;">The Travel Bucketlist</h1>
 
     </div>
 
