@@ -69,7 +69,6 @@
             <fieldset>
                 <div class="content" style="flex-Direction:row;">
                     <input type="submit" class="btnPrimary" value="Register" id="register" disabled />
-                    {{-- <button class="btnPrimary" type="submit" id="register" name="register" disabled>Register</button> --}}
                     <button class="btnCancel" type="button" onclick=" window.location.href= `{{ url('/')}}`"> Cancel </button>
                 </div>
             </fieldset>
