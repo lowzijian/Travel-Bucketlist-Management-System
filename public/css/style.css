@@ -337,6 +337,8 @@ label {
 
 .btnOutlined:hover {
     font-weight: 600;
+    color: #1c1471;
+    text-decoration: none;
 }
 
 /* Image Gallery*/
