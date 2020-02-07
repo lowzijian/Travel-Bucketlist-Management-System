@@ -18,8 +18,13 @@ class TravelBucketItemsController extends Controller
     public function index()
     {
         $user = Auth::user();
-        $items = Travel_bucket_item::where('user_id', '=', $user->id)->join('Travel_bucket_countries','Travel_bucket_countries.id','=','Travel_bucket_items.country_id')->get();
-        return view('Users.index')->with(['user' => $user, 'items' => $items]);
+        $countries = Travel_bucket_country::all();
+        $items = Travel_bucket_item::where('user_id', '=', $user->id)->join('Travel_bucket_countries', 'Travel_bucket_countries.id', '=', 'Travel_bucket_items.country_id')->get();
+        return view('Users.index')->with([
+            'user' => $user,
+            'items' => $items,
+            'countries' => $countries
+        ]);
     }
 
     /**
@@ -54,9 +59,9 @@ class TravelBucketItemsController extends Controller
             $request->hasFile('photos') &&
             $request->file('photos')->isValid()
         ) {
-            $photoName = time() . '.' . request()->photos->getClientOriginalExtension();
+            $photoName = time() . '@' . ($current_user->id) . '.' . request()->photos->getClientOriginalExtension();
             request()->photos->move(public_path('photos'), $photoName);
-            $path = "\\" . $photoName;
+            $path = 'photos' . "\\" . $photoName;
             $imagePath = array($path);
             $travel_bucket_item->photos = json_encode($imagePath);
         }
@@ -77,17 +82,16 @@ class TravelBucketItemsController extends Controller
         $travelBucketItem = DB::select(DB::raw("SELECT i.id, i.updated_at, i.title, i.caption, i.description, i.city, i.photos, i.start_date, i.end_date, c.`name` AS `countryName`
         FROM travel_bucket_items i JOIN travel_bucket_countries c ON i.country_id=c.id WHERE i.id='" . $id . "'"));
         //where('Travel_bucket_items.id','=',$id)->leftJoin('Travel_bucket_countries', 'Travel_bucket_countries.id', '=', 'Travel_bucket_items.country_id')->get();
-        if(!$travelBucketItem) throw new ModelNotFoundException;
+        if (!$travelBucketItem) throw new ModelNotFoundException;
 
         $user = Auth::user();
-        if(!$user) throw new ModelNotFouundException;
+        if (!$user) throw new ModelNotFouundException;
 
         //return $travelBucketItem;
-        return view('Users.show',[
+        return view('Users.show', [
             'travelBucketItem' => $travelBucketItem,
             'user' => $user,
         ]);
-
     }
 
     /**
