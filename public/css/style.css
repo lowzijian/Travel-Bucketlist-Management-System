@@ -172,7 +172,7 @@ footer {
 
 /*Href link*/
 .link {
-    color: #1c1471;
+    color: #2b2a31;
     font-weight: bold;
 }
 
@@ -194,8 +194,12 @@ footer {
     color: #1c1471;
 }
 
-h2 {
+h2,h3 {
     color: #696780;
+}
+
+h1 {
+    color: #00003f;
 }
 
 .title {
@@ -389,6 +393,24 @@ label {
 
 .img-responsive {
 
+}
+
+.img-EmptyList {
+    display: inline-block;
+    min-width: 200px;
+    max-width: 400px;
+    min-height: 200px;
+    max-height: 400px;
+    margin:15px;
+}
+
+.img-logo {
+    display: inline-block;
+    min-width: 200px;
+    max-width: 500px;
+    min-height: 300px;
+    max-height: 300px;
+    margin:15px;
 }
 
 /*Travel gallery Card Info*/
