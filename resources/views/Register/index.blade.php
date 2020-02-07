@@ -7,7 +7,7 @@
 <body>
     <div class="flex-center full-height">
         <div class="content" style="margin-Bottom:0px">
-            <img src="/asset/img/travel_bucketlist_logo.png" alt="Travel Bucketlist logo" style="width:500px;height:300px;min-width:200px">
+            <img src="/asset/img/travel_bucketlist_logo.png" alt="Travel Bucketlist logo" class="img-logo">
         </div>
         <p class="title" style="text-decoration: underline;">Register an account</p>
 
@@ -98,7 +98,7 @@
         })
 
         $(document).ready(function() {
-           $("#passwordField, #reenterpasswordField").keyup(checkPassword);
+            $("#passwordField, #reenterpasswordField").keyup(checkPassword);
         });
 
         // Function to check Whether both passwords is same or not.
