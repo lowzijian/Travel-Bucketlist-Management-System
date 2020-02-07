@@ -24,9 +24,13 @@ Route::get('/register', function () {
 Route::post('/register', 'Auth\RegisterController@register');
 
 
-Route::get('/home', function () {
-    return view('Users.index');
-});
+// Route::get('/home', function () {
+//     return view('Users.index');
+// });
+
+Route::get('/logout', 'Auth\LoginController@logout');
+
+Route::get('/home', 'TravelBucketCountriesController@index')->middleware('customAuth');
 
 Route::get('/create', function () {
     return view('Users.create');

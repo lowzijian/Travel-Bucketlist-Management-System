@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Travel_bucket_country;
 use App\Travel_bucket_item;
+use Illuminate\Support\Facades\Auth;
 
 class TravelBucketCountriesController extends Controller
 {
@@ -16,7 +17,7 @@ class TravelBucketCountriesController extends Controller
     public function index()
     {
         //
-        return Travel_bucket_item::all();
+        return Auth::user();
     }
 
     /**
