@@ -17,7 +17,6 @@ class TravelBucketCountriesController extends Controller
     public function index()
     {
         //
-        return Auth::user();
     }
 
     /**
