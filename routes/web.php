@@ -43,3 +43,8 @@ Route::get('/show', function () {
 Route::get('/countries', function () {
     return view('Users.countries');
 });
+
+
+Route::get('/admin', function () {
+    return view('Admin.index');
+});
