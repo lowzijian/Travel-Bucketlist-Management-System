@@ -387,6 +387,10 @@ label {
     text-overflow: ellipsis;
 }
 
+.img-responsive {
+
+}
+
 /*Travel gallery Card Info*/
 .travelTitle {
     font-size: 20px;
