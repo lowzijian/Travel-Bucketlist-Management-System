@@ -33,7 +33,7 @@
                 <div class="input-container" style="display:flex;">
                     <i class="fa fa-id-card-alt icon icon input-form-icon"></i>
                     <div style="display:grid;">
-                        <label>Userame</label>
+                        <label>Username</label>
                         <span class="caption">An unique name that bind to this account.</span>
                     </div>
                 </div>
