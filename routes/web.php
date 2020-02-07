@@ -31,9 +31,7 @@ Route::get('/logout', 'Auth\LoginController@logout');
 Route::get('/create', 'TravelBucketItemsController@create');
 Route::post('/create', 'TravelBucketItemsController@store');
 
-Route::post('/show', function () {
-    return view('Users.show');
-});
+Route::get('/show/{id}', 'TravelBucketItemsController@show')->name('travelBucketItem.show');
 
 Route::get('/countries', function () {
     return view('Users.countries');
