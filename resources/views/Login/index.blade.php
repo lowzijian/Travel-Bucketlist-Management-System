@@ -14,8 +14,8 @@
 
         <form class="inputform">
             <div class="input-container">
-                <i class="fa fa-user icon icon input-form-icon"></i>
-                <input type="text" class="input-form-container" placeholder="Enter your username" id="usernameField">
+                <i class="far fa-envelope icon input-form-icon"></i>
+                <input type="email" class="input-form-container" placeholder="Enter your email" id="emailField">
             </div>
 
             <div class="input-container">
@@ -24,7 +24,7 @@
                 <i class="fas fa-eye-slash icon icon input-form-icon" style="padding-Left:5px;padding-Right:0px;" id="eye-password"></i>
             </div>
 
-            <p class="errorHelperText">Incorrect Username & Password</p>
+            <p class="errorHelperText">Incorrect Email & Password</p>
 
             <div class="content">
                 <button class="btnPrimary" type="button" onclick=" window.location.href= `{{ url('/home')}}`">Login</button>
