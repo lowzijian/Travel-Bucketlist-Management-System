@@ -28,8 +28,7 @@
                             <th>No.</th>
                             <th>Username</th>
                             <th>Email</th>
-                            <th>Created At</th>
-                            <th>Last Updated at</th>
+                            <th>Access</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -44,10 +43,7 @@
                                 <div>chinkaixiang123@gmail.com</div>
                             </td>
                             <td class="table-text">
-                                <div>2012-02-11</div>
-                            </td>
-                            <td class="table-text">
-                                <div>2012-02-11</div>
+                                <button class="btnCancel">Revoke</button>
                             </td>
                         </tr>
                     </tbody>
