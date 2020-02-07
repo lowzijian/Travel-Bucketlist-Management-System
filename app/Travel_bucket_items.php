@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Travel_bucket_items extends Model
+class Travel_bucket_item extends Model
 {
     protected $fillable = [
     

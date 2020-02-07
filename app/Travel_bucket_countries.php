@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Travel_bucket_countries extends Model
+class Travel_bucket_country extends Model
 {
     protected $fillable = [
     
@@ -19,6 +19,6 @@ class Travel_bucket_countries extends Model
     
     public function travel_bucket_item()
     {
-        return $this->hasMany(Travel_bucket_items::class);
+        return $this->hasMany(Travel_bucket_item::class);
     }
 }
