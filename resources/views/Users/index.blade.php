@@ -1,21 +1,23 @@
 @extends('layouts.users')
 
 @section('content')
-<div class="flex-center full-height col-md-12">
+<div class="flex-center full-height col-md-12 withMarginVertical">
 
     <div style="margin:15px;width:75%" class="col-md-12">
         <p class="title" style="margin-bottom:0px">Welcome back <span class="displayName">{{$user->name}}</span></p>
-        <p>Total travel bucketlist item : <span class="num">{{count($items)}}</span></p>
-        <p class="caption">Last updated at 30-1-2020</p>
+        <p>Total travel bucketlist's items : <span class="num">{{count($items)}}</span></p>
+        <p class="caption">Last updated at {{$user->updated_at}}</p>
     </div>
 
-    <div style="margin:15px;width:80%" class="col-md-12 row">
+    @if (count($items) >> 0)
+
+    <div style="margin:15px;width:75%" class="col-md-12 row">
         <select class="input-form-container col-sm-3" id="filter_country" style="margin:5px">
             <option value="default" selected disabled hidden>Select a Country</option>
-            <option value="Malaysia">Malaysia</option>
-            <option value="Thailand">Thailand</option>
-            <option value="Singapore">Singapore</option>
-            <option value="Vietnam">Vietnam</option>
+            @foreach($countries as $country) {
+            <option value={{$country->id}}>{{$country->name}}</option>
+            }
+            @endforeach
         </select>
 
 
@@ -39,12 +41,9 @@
                 <div id="image-gallery">
                     <div class="row">
                         @foreach($items as $item)
-
-                        {{-- {{$parsePhotos = json_decode($item->photos, true)}} --}}
-                        {{-- {{print(($parsePhotos))}} --}}
                         <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 image">
                             <div class="img-wrapper" onclick=" window.location.href= `{{ url('/show')}}`">
-                                <a href="https://unsplash.it/800"><img src="{{(json_decode($item->photos))[0]}}" class="img-responsive"></a>
+                                <img src="{{(json_decode($item->photos))[0]}}" class="img-responsive">
                                 <div class="img-overlay">
                                     <i class="fa fa-plane" aria-hidden="true"></i>
                                 </div>
@@ -68,6 +67,18 @@
 
 
     </div>
+
+
+    @else
+    <div style="margin:15px;width:75%" class="col-md-12 row flex-center">
+        <img src="/asset/img/emptylist.svg" alt="Empty Travel Bucketlist" class="img-EmptyList" />
+        <div class="withMarginVertical" style="text-align: center;">
+            <h1>Empty Travel Bucket. </h1>
+            <p>Start to create a new travel bucket list item now!</p>
+        </div>
+    </div>
+
+    @endif
 
 </div>
 
