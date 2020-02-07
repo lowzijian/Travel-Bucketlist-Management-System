@@ -12,22 +12,25 @@
 
         <p class="title">Welcome to The Travel Bucketlist</p>
 
-        <form class="inputform">
+        <form class="inputform" method="POST" action="/login">
+            @csrf
             <div class="input-container">
                 <i class="fa fa-user icon icon input-form-icon"></i>
-                <input type="text" class="input-form-container" placeholder="Enter your username" id="usernameField">
+                <input type="email" name="email" class="input-form-container" placeholder="Enter your username" id="email">
             </div>
 
             <div class="input-container">
                 <i class="fa fa-key icon input-form-icon"></i>
-                <input type="password" class="input-form-container" placeholder="Enter your password" id="passwordField">
+                <input type="password" name="password" class="input-form-container" placeholder="Enter your password" id="passwordField">
                 <i class="fas fa-eye-slash icon icon input-form-icon" style="padding-Left:5px;padding-Right:0px;" id="eye-password"></i>
             </div>
-
-            <p class="errorHelperText">Incorrect Username & Password</p>
+            @if($errors->any())
+            <p class="errorHelperText">{{$errors->first()}}</p>
+            @endif
 
             <div class="content">
-                <button class="btnPrimary" type="button" onclick=" window.location.href= `{{ url('/home')}}`">Login</button>
+                {{-- <button class="btnPrimary" type="button" >Login</button> --}}
+                <input type="submit" class="btnPrimary" />
             </div>
 
         </form>
