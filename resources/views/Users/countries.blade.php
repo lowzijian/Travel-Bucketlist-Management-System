@@ -1,22 +1,7 @@
-@extends('layouts.app')
+@extends('layouts.users')
 
 @section('content')
 
-<header>
-    <div class="container">
-        <img src="/asset/img/travel_bucketlist_thumbnail.png" alt="Travel Bucketlist thumbnail">
-        <h1 style="color:White;">The Travel Bucketlist</h1>
-    </div>
-
-    <nav class="container" style="padding-Bottom:0px">
-        <a class="navigationItem" href="{{ url('/home')}}"><i class="fa fa-home"></i> Home</a>
-        <a class="navigationItem" href="{{ url('/create')}}"><i class="fa fa-plus-square"></i> Create</a>
-        <a class="navigationItem active" href="{{ url('/countries')}}"><i class="fa fa-compass"></i> Countries</a>
-        <a class="navigationItem" href="{{ url('/')}}"><i class="fa fa-sign-out-alt"></i></a>
-    </nav>
-</header>
-
-<body>
     <div class="flex-center full-height col-md-12">
 
         <div style="margin:15px;width:70%">
@@ -87,8 +72,6 @@
 
     </div>
 
-
-</body>
 
 @endsection
 

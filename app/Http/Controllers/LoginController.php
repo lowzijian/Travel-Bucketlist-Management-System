@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\ValidationException;
+use App\User;
 
 class LoginController extends Controller
 {
@@ -18,12 +19,19 @@ class LoginController extends Controller
     public function authenticate(Request $request)
     {
         $credentials = $request->only('email', 'password');
-        if (Auth::attempt($credentials)) {
-            return redirect('/home');
+        $user = User::where('email','=', $request->get('email'))->first();
+        if($user){
+            if($user->verified == 1){
+                if (Auth::attempt($credentials)) {
+                    return redirect('/home');
+                }else{
+                    throw ValidationException::withMessages(['errors' => 'Invalid login']);
+                }
+            }else{
+                throw ValidationException::withMessages(['errors' => 'User is not verifed']);
+            }
         }else{
-            throw ValidationException::withMessages(['errors' => 'Invalid login']);
+            throw ValidationException::withMessages(['errors' => 'User not exist']);
         }
-        
-
     }
 }
