@@ -15,16 +15,16 @@
             <fieldset>
 
                 <div class="input-container" style="display:flex;">
-                    <i class="fa fa-user icon icon input-form-icon"></i>
+                    <i class="far fa-envelope  icon input-form-icon"></i>
                     <div style="display:grid;">
-                        <label>Username</label>
-                        <span class="caption">An unique name to be used as login id.</span>
+                        <label>Email</label>
+                        <span class="caption">An unique email that bind to this account.</span>
                     </div>
                 </div>
 
 
                 <div class="input-container input-container-center " style="display:flex;">
-                    <input type="text" class="input-form-container required" placeholder="Enter your username" id="usernameField" name="new_username">
+                    <input type="email" class="input-form-container required" placeholder="Enter your email" id="emailField" name="new_email">
                 </div>
 
             </fieldset>
@@ -33,12 +33,12 @@
                 <div class="input-container" style="display:flex;">
                     <i class="fa fa-id-card-alt icon icon input-form-icon"></i>
                     <div style="display:grid;">
-                        <label>Display Name</label>
-                        <span class="caption">An unique name to be shown after login.</span>
+                        <label>Username</label>
+                        <span class="caption">An unique name that bind to this account.</span>
                     </div>
                 </div>
                 <div class="input-container input-container-center ">
-                    <input type="text" class="input-form-container required" placeholder="Enter your display name" id="displaynameField" name="new_displayname">
+                    <input type="text" class="input-form-container required" placeholder="Enter your username" id="usernameField" name="new_username">
                 </div>
             </fieldset>
             <fieldset>

@@ -15,7 +15,7 @@
         <form class="inputform" method="POST" action="/login">
             @csrf
             <div class="input-container">
-                <i class="fa fa-user icon icon input-form-icon"></i>
+                <i class="far fa-envelope icon input-form-icon"></i>
                 <input type="email" name="email" class="input-form-container" placeholder="Enter your username" id="email">
             </div>
 
