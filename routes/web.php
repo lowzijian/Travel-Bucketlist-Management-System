@@ -32,9 +32,7 @@ Route::get('/create', function () {
     return view('Users.create');
 });
 
-Route::get('/show', function () {
-    return view('Users.show');
-});
+Route::get('/show/{id}', 'TravelBucketItemsController@show')->name('travelBucketItem.show');
 
 Route::get('/countries', function () {
     return view('Users.countries');
