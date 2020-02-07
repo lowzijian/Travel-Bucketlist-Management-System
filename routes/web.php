@@ -28,11 +28,10 @@ Route::get('/home', function () {
     return view('Users.index');
 });
 
-Route::get('/create', function () {
-    return view('Users.create');
-});
+Route::get('/create', 'TravelBucketItemsController@create');
+Route::post('/create', 'TravelBucketItemsController@store');
 
-Route::get('/show', function () {
+Route::post('/show', function () {
     return view('Users.show');
 });
 
