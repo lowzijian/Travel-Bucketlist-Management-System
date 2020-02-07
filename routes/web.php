@@ -16,9 +16,12 @@ Route::get('/', function () {
 });
 
 Route::post('/login', 'Auth\LoginController@login');
+
 Route::get('/register', function () {
     return view('Register.index');
 });
+
+Route::post('/register', 'Auth\RegisterController@register');
 
 
 Route::get('/home', function () {

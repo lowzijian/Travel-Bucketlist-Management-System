@@ -11,7 +11,8 @@
         </div>
         <p class="title" style="text-decoration: underline;">Register an account</p>
 
-        <form class="inputform" action="">
+        <form class="inputform" action="/register" method="POST">
+            @csrf
             <fieldset>
 
                 <div class="input-container" style="display:flex;">
@@ -24,7 +25,7 @@
 
 
                 <div class="input-container input-container-center " style="display:flex;">
-                    <input type="email" class="input-form-container required" placeholder="Enter your email" id="emailField" name="new_email">
+                    <input name="email" type="email" class="input-form-container required" placeholder="Enter your email" id="emailField" name="new_email">
                 </div>
 
             </fieldset>
@@ -38,7 +39,7 @@
                     </div>
                 </div>
                 <div class="input-container input-container-center ">
-                    <input type="text" class="input-form-container required" placeholder="Enter your username" id="usernameField" name="new_username">
+                    <input name="name" type="text" class="input-form-container required" placeholder="Enter your username" id="usernameField" name="new_username">
                 </div>
             </fieldset>
             <fieldset>
@@ -52,19 +53,23 @@
                     </div>
                 </div>
                 <div class="input-container input-container-center ">
-                    <input type="password" class="input-form-container required" placeholder="Enter your password" id="passwordField" name="new_password">
+                    <input name="password" type="password" class="input-form-container required" placeholder="Enter your password" id="passwordField" name="new_password">
                 </div>
                 <div class="input-container input-container-center">
-                    <input type="password" class="input-form-container required" placeholder="Confirm your password" id="reenterpasswordField" name="new_password_reenter">
+                    <input name="password_confirmation" type="password" class="input-form-container required" placeholder="Confirm your password" id="reenterpasswordField" name="new_password_reenter">
                 </div>
 
 
                 <p class="errorHelperText" id="passwordHelperText"></p>
             </fieldset>
+            @if($errors->any())
+            <p class="errorHelperText">{{$errors->first()}}</p>
+            @endif
 
             <fieldset>
                 <div class="content" style="flex-Direction:row;">
-                    <button class="btnPrimary" type="submit" id="register" name="register" disabled>Register</button>
+                    <input type="submit" class="btnPrimary" value="Register" id="register" disabled />
+                    {{-- <button class="btnPrimary" type="submit" id="register" name="register" disabled>Register</button> --}}
                     <button class="btnCancel" type="button" onclick=" window.location.href= `{{ url('/')}}`"> Cancel </button>
                 </div>
             </fieldset>
