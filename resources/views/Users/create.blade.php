@@ -44,7 +44,7 @@
             </div>
             <div class="row withMarginVertical">
 
-                <div class="col-md-3 withMarginVertical">
+                <div class="col-md-6 withMarginVertical " style="display: inline-block">
                     <label> <i class="fa fa-globe-americas"></i> Country</label>
                     <p class="caption">Select a country</p>
 
@@ -58,12 +58,16 @@
                     </select>
                 </div>
 
-                <div class="col-md-3 withMarginVertical">
+                <div class="col-md-6 withMarginVertical">
                     <label> <i class="fa fa-city"></i> City</label>
                     <p class="caption">The destination of your journey</p>
 
                     <input type="text" class="input-form-container required" placeholder="Enter a city name" id="cityField" name="city">
                 </div>
+
+
+            </div>
+            <div class="row withMarginVertical">
 
                 <div class="col-md-3 withMarginVertical">
                     <label> <i class="fa fa-plane-departure"></i> Start Date</label>
@@ -79,7 +83,6 @@
                     <input type="date" class="input-form-container" id="enddateField" name="end_date">
                 </div>
             </div>
-
             <div class="row withMarginVertical">
 
                 <div class="col-md-12">
