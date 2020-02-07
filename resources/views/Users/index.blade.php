@@ -4,8 +4,8 @@
 <div class="flex-center full-height col-md-12">
 
     <div style="margin:15px;width:75%" class="col-md-12">
-        <p class="title" style="margin-bottom:0px">Welcome back <span class="displayName">Chin Kai Xiang</span></p>
-        <p>Total visited<i class="fa fa-city icon"></i> : <span class="num">25</span></p>
+    <p class="title" style="margin-bottom:0px">Welcome back <span class="displayName">{{$user->name}}</span></p>
+    <p>Total visited<i class="fa fa-city icon"></i> : <span class="num">{{count($items)}}</span></p>
         <p class="caption">Last updated at 30-1-2020</p>
     </div>
 
@@ -38,64 +38,26 @@
             <div>
                 <div id="image-gallery">
                     <div class="row">
-                        <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 image">
-                            <div class="img-wrapper" onclick=" window.location.href= `{{ url('/show')}}`">
-                                <a href="https://unsplash.it/800"><img src="https://unsplash.it/800" class="img-responsive"></a>
-                                <div class="img-overlay">
-                                    <i class="fa fa-plane" aria-hidden="true"></i>
-                                </div>
-                            </div>
-                            <div class="img-title-caption">
-                                <p class="travelLocation"><i class="fa fa-map-marker-alt"></i> Bangkok , Thailand</p>
-                                <p class="travelTitle">Travel to Bangkok</p>
-                                <button class="btnOutlined" style="float:right;" onclick=" window.location.href= `{{ url('/show')}}`">Read More</button>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 image">
-                            <div class="img-wrapper" onclick=" window.location.href= `{{ url('/show')}}`">
-                                <a href="https://unsplash.it/700"><img src="https://unsplash.it/700" class="img-responsive"></a>
-                                <div class="img-overlay">
-                                    <i class="fa fa-plane" aria-hidden="true"></i>
-                                </div>
-                            </div>
-                            <div class="img-title-caption">
-                                <p class="travelLocation"><i class="fa fa-map-marker-alt"></i> Bangkok , Thailand</p>
-                                <p class="travelTitle">Travel to Bangkok</p>
-                                <button class="btnOutlined" style="float:right;" onclick=" window.location.href= `{{ url('/show')}}`">Read More</button>
-
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 image">
-                            <div class="img-wrapper" onclick=" window.location.href= `{{ url('/show')}}`">
-                                <a href="https://unsplash.it/600"><img src="https://unsplash.it/600" class="img-responsive"></a>
-                                <div class="img-overlay">
-                                    <i class="fa fa-plane" aria-hidden="true"></i>
-                                </div>
-                            </div>
-                            <div class="img-title-caption">
-                                <p class="travelLocation"><i class="fa fa-map-marker-alt"></i> Bangkok , Thailand</p>
-                                <p class="travelTitle">Travel to Bangkok</p>
-                                <button class="btnOutlined" style="float:right;" onclick=" window.location.href= `{{ url('/show')}}`">Read More</button>
-
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 image">
-                            <div class="img-wrapper" onclick=" window.location.href= `{{ url('/show')}}`">
-                                <a href="https://unsplash.it/500"><img src="https://unsplash.it/500" class="img-responsive"></a>
-                                <div class="img-overlay">
-                                    <i class="fa fa-plane" aria-hidden="true"></i>
-                                </div>
-                            </div>
-                            <div class="img-title-caption">
-                                <p class="travelLocation"><i class="fa fa-map-marker-alt"></i> Bangkok , Thailand</p>
-                                <p class="travelTitle">Travel to Bangkok</p>
-                                <button class="btnOutlined" style="float:right;" onclick=" window.location.href= `{{ url('/show')}}`">Read More</button>
-                            </div>
-                        </div>
-                    </div><!-- End row -->
+                    @foreach($items as $item)
+                    
+                    {{-- {{$parsePhotos = json_decode($item->photos, true)}} --}}
+                    {{-- {{print(($parsePhotos))}} --}}
+    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 image">
+        <div class="img-wrapper" onclick=" window.location.href= `{{ url('/show')}}`">
+            <a href="https://unsplash.it/800"><img src={{(json_decode($item->photos))[0]}} class="img-responsive"></a>
+            <div class="img-overlay">
+                <i class="fa fa-plane" aria-hidden="true"></i>
+            </div>
+        </div>
+        <div class="img-title-caption">
+        <p class="travelLocation"><i class="fa fa-map-marker-alt"></i> {{$item->city}}, {{$item->name}}</p>
+        <p class="travelTitle">{{$item->title}}</p>
+            <a class="btnOutlined" style="float:right;" href="/show/gugujiao">Read More</a>
+        </div>
+    </div>
+@endforeach
+</div>
+                    
                 </div><!-- End image gallery -->
             </div><!-- End container -->
 
