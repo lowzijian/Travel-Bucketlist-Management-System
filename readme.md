@@ -17,12 +17,12 @@ run `npm install`
 `php artisan key:generate`
 
 5. **Create an empty database for our application** <br>
-database name `laravel myapp` with `utf8mb4 unicode ci` , open `.env` environment file to modify the MYSQL database settings
+database name `travel_bucketlist_system` with `utf8mb4 unicode ci` , open `.env` environment file to modify the MYSQL database settings
 ````
 DB_CONNECTION=mysql <br>
 DB_HOST=127.0.0.1 <br>
 DB_PORT=3306 <br>
-DB_DATABASE=laravel_app <br>
+DB_DATABASE=travel_bucketlist_system <br>
 DB_USERNAME=root <br>
 DB_PASSWORD= <br>
 ````
@@ -45,10 +45,12 @@ CREATE TABLE `travel_bucket_item` (
   `country_id` varchar(255),
   `title` varchar(255),
   `caption` varchar(255),
-  `description` varchar(255),
+  `description` text,
   `city` varchar(255),
-  `StartDate` timestamp,
-  `EndDate` int
+  `photos` text,
+  `start_date` timestamp,
+  `end_date` timestamp,
+  `user_id` int
 );
 
 CREATE TABLE `travel_bucket_country` (
@@ -66,10 +68,14 @@ CREATE TABLE `users` (
   `id` int PRIMARY KEY AUTO_INCREMENT,
   `username` varchar(255),
   `password` varchar(255),
-  `displayName` varchar(255)
+  `displayName` varchar(255),
+  `role` varchar(255)
 );
 
 ALTER TABLE `travel_bucket_item` ADD FOREIGN KEY (`country_id`) REFERENCES `travel_bucket_country` (`id`);
+
+ALTER TABLE `travel_bucket_item` ADD FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
+
 
 ````
 
