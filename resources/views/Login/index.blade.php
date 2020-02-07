@@ -29,8 +29,7 @@
             @endif
 
             <div class="content">
-                {{-- <button class="btnPrimary" type="button" >Login</button> --}}
-                <input type="submit" class="btnPrimary" />
+                <input type="submit" class="btnPrimary" value="Login">
             </div>
 
         </form>
