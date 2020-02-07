@@ -51,10 +51,10 @@
 
                     <select class="input-form-container required" id="countryField" name="country_id">
                         <option value="" selected disabled hidden>Select a Country</option>
-                        <option value="0">Malaysia</option>
-                        <option value="1">Thailand</option>
-                        <option value="2">Singapore</option>
-                        <option value="3">Vietnam</option>
+                        @foreach($countries as $country) {
+                        <option value={{$country->id}}>{{$country->name}}</option>
+                        }
+                        @endforeach
                     </select>
                 </div>
 
@@ -87,7 +87,7 @@
                     <p class="caption">Upload Images of your journey.</p>
                 </div>
 
-                <input type = "file" class="col-md-12 btnPrimary" name="photos" accept="image/png, image/jpeg"/>
+                <input type="file" class="col-md-12 btnPrimary" name="photos" accept="image/png, image/jpeg" />
             </div>
 
             <div class="row withMarginVertical">
