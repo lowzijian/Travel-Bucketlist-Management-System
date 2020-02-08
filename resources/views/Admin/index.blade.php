@@ -98,7 +98,7 @@
                                 <form action={{"/updateUser/" . $user->id}} method="POST">
                                 @csrf
                                     <input name="type" type="submit" class="btnAccept" value="Accept">| <input name="type" type="submit" class="btnCancel" value="Reject">
-                                <form/>
+                                </form>
                                 </div>
                             </td>
                         </tr>
