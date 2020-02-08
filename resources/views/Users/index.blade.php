@@ -43,7 +43,7 @@
                         @foreach($items as $item)
                         <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 image">
                             <div class="img-wrapper" onclick=" window.location.href= `{{ url('/show')}}`">
-                                <img src="{{(json_decode($item->photos))[0]}}" class="img-responsive">
+                                <img src="/{{(json_decode($item->photos))[0]}}" class="img-responsive">
                                 <div class="img-overlay">
                                     <i class="fa fa-plane" aria-hidden="true"></i>
                                 </div>
