@@ -49,9 +49,9 @@
                                 </div>
                             </div>
                             <div class="img-title-caption">
-                                <p class="travelLocation"><i class="fa fa-map-marker-alt"></i> {{$item->city}}, {{$item->name}}</p>
+                                <p class="travelLocation"><i class="fa fa-map-marker-alt"></i> {{$item->city}}, {{$item->travel_bucket_country->name}}</p>
                                 <p class="travelTitle">{{$item->title}}</p>
-                                <a class="btnOutlined" style="float:right;" href="/show/gugujiao">Read More</a>
+                                <a class="btnOutlined" style="float:right;" href={{"/show/" . $item->id}}>Read More</a>
                             </div>
                         </div>
                         @endforeach

@@ -72,7 +72,7 @@ https.get('https://restcountries.eu/rest/v2/all', (res) => {
 const connection = mysql.createConnection({
     host: 'localhost',
     port: '3308',
-    database: 'travel_bucketlist_management_system',
+    database: 'travel_bucketlist_system',
     user: 'root',
     password: ''
 })

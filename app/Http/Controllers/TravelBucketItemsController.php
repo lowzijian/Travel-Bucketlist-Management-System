@@ -19,7 +19,7 @@ class TravelBucketItemsController extends Controller
     {
         $user = Auth::user();
         $countries = Travel_bucket_country::all();
-        $items = Travel_bucket_item::where('user_id', '=', $user->id)->join('Travel_bucket_countries', 'Travel_bucket_countries.id', '=', 'Travel_bucket_items.country_id')->get();
+        $items = Travel_bucket_item::where('user_id', '=', $user->id)->with('Travel_bucket_country')->get();
         return view('Users.index')->with([
             'user' => $user,
             'items' => $items,

@@ -23,4 +23,9 @@ class Travel_bucket_item extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function Travel_bucket_country()
+    {
+        return $this->belongsTo('App\Travel_bucket_country', 'country_id');
+    }
 }
