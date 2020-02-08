@@ -1,28 +1,19 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
 @section('content')
-<header class="adminHeader">
-    <div class="container">
-        <img src="/asset/img/travel_bucketlist_admin_thumbnail.png" alt="Travel Bucketlist thumbnail">
-        <h1 style="color:White;">The Travel Bucketlist (admin)</h1>
-    </div>
 
-    <nav class="container" style="padding-Bottom:0px">
-        <a class="navigationItemAdmin" href="{{ url('/')}}"><i class="fa fa-sign-out-alt"></i></a>
-    </nav>
-</header>
+<div class="container">
+    <h1>Users Management System <i class="fas fa-users-cog" style="padding-left: 10px;"></i></i></h1>
+</div>
 
-<body>
-    <div class="container">
-
-        <!-- Approved Users-->
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h2>Approved User <i class="fas fa-users" style="padding-Left:15px"></i></h2>
-            </div>
-            <div class="panel-body container">
-                <table class="table table-striped task-table">
-                    <!-- Table Headings -->
+<!-- Approved Users table-->
+<div class="container">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h2>Approved Users</h2>
+        </div>
+        <div class="panel-body container">
+            <!-- <table class="table table-striped task-table">
                     <thead>
                         <tr>
                             <th>No.</th>
@@ -47,22 +38,29 @@
                             </td>
                         </tr>
                     </tbody>
-                </table>
+                </table> -->
 
-            </div>
         </div>
-
     </div>
+</div>
 
-    <div class="container">
-        <!-- Pending Users-->
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h2>Pending User <i class="fas fa-user-clock" style="padding-Left:15px"></i></h2>
-            </div>
-            <div class="panel-body container">
-                <table class="table table-striped task-table">
-                    <!-- Table Headings -->
+<!-- Without Approved Users-->
+<div class="col-md-12 row flex-center container">
+    <img src="/asset/img/emptyusers.svg" alt="Empty Users" class="img-EmptyList" />
+    <div class="withMarginVertical" style="text-align: center;">
+        <h3>Empty Approved Users. </h3>
+        <p>It seems there arent any approved users.</p>
+    </div>
+</div>
+
+<!-- Pending Users table-->
+<div class="container">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h2>Pending Users</h2>
+        </div>
+        <div class="panel-body container">
+            <!-- <table class="table table-striped task-table">
                     <thead>
                         <tr>
                             <th>No.</th>
@@ -89,11 +87,20 @@
                             </td>
                         </tr>
                     </tbody>
-                </table>
-            </div>
+                </table> -->
         </div>
-
     </div>
-</body>
+
+</div>
+
+<!-- Without Approved Users-->
+<div class="col-md-12 row flex-center container">
+    <img src="/asset/img/emptyusers.svg" alt="Empty Users" class="img-EmptyList" />
+    <div class="withMarginVertical" style="text-align: center;">
+        <h3>Empty Pending Users. </h3>
+        <p>It seems there arent any pending users.</p>
+    </div>
+</div>
+
 
 @endsection

@@ -1,4 +1,6 @@
 /*Refer _variable.scss for theme color*/
+@import url('https://fonts.googleapis.com/css?family=Oswald&display=swap');
+
 
 /* scroll bar */
 ::-webkit-scrollbar {
@@ -79,10 +81,6 @@ header {
     position: sticky;
 }
 
-.adminHeader {
-    background-color: #d9d9d9;
-}
-
 .navigationItem {
     padding: 15px;
     color: white;
@@ -93,18 +91,6 @@ header {
     background-color: #00003f;
     text-decoration: none;
     color: white;
-}
-
-.navigationItemAdmin {
-    padding: 15px;
-    color: white;
-    text-decoration: none;
-}
-
-.navigationItemAdmin:hover {
-    background-color: white;
-    text-decoration: none;
-    color: #d9d9d9;
 }
 
 .navigationItem:active {
@@ -194,12 +180,12 @@ footer {
     color: #1c1471;
 }
 
-h2,h3 {
-    color: #696780;
-}
 
-h1 {
+h1,h2,h3 {
     color: #00003f;
+    font-family: 'Oswald', sans-serif;
+    font-weight: bold;
+
 }
 
 .title {
