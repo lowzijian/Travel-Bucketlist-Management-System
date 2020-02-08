@@ -30,7 +30,7 @@
 <header>
     <div class="container">
         <img src="/asset/img/travel_bucketlist_thumbnail.png" alt="Travel Bucketlist thumbnail">
-        <h1 style="color:white;">Welcome Back Admin</h1>
+        <h1 style="color:white;font-size: 3.25rem;">Welcome Back Admin</h1>
     </div>
 
     <nav class="container" style="padding-Bottom:0px">

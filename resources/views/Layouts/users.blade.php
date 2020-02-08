@@ -37,7 +37,7 @@
 <header>
     <div class="container">
         <img src="/asset/img/travel_bucketlist_thumbnail.png" alt="Travel Bucketlist thumbnail">
-        <h1 style="color:white;padding-left: 15px;">The Travel Bucketlist</h1>
+        <h1 style="color:white;padding-left: 15px;font-size: 3.25rem;">The Travel Bucketlist</h1>
 
     </div>
 
@@ -75,9 +75,10 @@
     <!-- Add in preloader screen -->
     <script>
         $(window).on("load", function() {
-            setTimeout(function(){  $(".loader-wrapper").fadeOut("slow"); }, 3000);
+            setTimeout(function() {
+                $(".loader-wrapper").fadeOut("slow");
+            }, 1500);
         });
-
     </script>
 </body>
 
