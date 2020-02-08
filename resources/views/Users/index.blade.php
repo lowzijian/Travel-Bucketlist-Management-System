@@ -83,15 +83,15 @@
                         @foreach($items as $item)
                         <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 image">
                             <div class="img-wrapper" onclick=" window.location.href= `{{ url('/show')}}`">
-                                <img src="{{(json_decode($item->photos))[0]}}" class="img-responsive">
+                                <img src="/{{(json_decode($item->photos))[0]}}" class="img-responsive">
                                 <div class="img-overlay">
                                     <i class="fa fa-plane" aria-hidden="true"></i>
                                 </div>
                             </div>
                             <div class="img-title-caption">
-                                <p class="travelLocation"><i class="fa fa-map-marker-alt"></i> {{$item->city}}, {{$item->name}}</p>
+                                <p class="travelLocation"><i class="fa fa-map-marker-alt"></i> {{$item->city}}, {{$item->travel_bucket_country->name}}</p>
                                 <p class="travelTitle">{{$item->title}}</p>
-                                <a class="btnOutlined" style="float:right;" href="/show/gugujiao">Read More</a>
+                                <a class="btnOutlined" style="float:right;" href={{"/show/" . $item->id}}>Read More</a>
                             </div>
                         </div>
                         @endforeach
