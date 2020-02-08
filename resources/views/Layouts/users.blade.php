@@ -44,7 +44,7 @@
     <nav class="container" style="padding-Bottom:0px" id="navContainer">
         <a class="navigationItem" href="{{ url('/home')}}"><i class="fa fa-home"></i> Home</a>
         <a class="navigationItem" href="{{ url('/create')}}"><i class="fa fa-plus-square"></i> Create</a>
-        <a class="navigationItem" href="{{ url('/')}}"><i class="fa fa-sign-out-alt"></i></a>
+        <a class="navigationItem" href="{{ url('/logout')}}"><i class="fa fa-sign-out-alt"></i></a>
     </nav>
 </header>
 

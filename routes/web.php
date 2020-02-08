@@ -17,9 +17,7 @@ Route::get('/', function () {
 
 Route::post('/login', 'LoginController@authenticate');
 
-Route::get('/register', function () {
-    return view('Register.index');
-});
+Route::get('/register', 'AdminController@hey');
 
 Route::post('/register', 'Auth\RegisterController@register');
 
@@ -38,6 +36,8 @@ Route::get('/countries', function () {
 });
 
 
-Route::get('/admin', function () {
-    return view('Admin.index');
-});
+// Route::get('/admin', function () {
+//     return view('Admin.index');
+// });
+
+Route::get('/admin', 'AdminController@index');

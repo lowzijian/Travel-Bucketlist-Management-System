@@ -32,20 +32,22 @@
                         </tr>
                     </thead>
                     <tbody>
+                    @foreach($verified as $user) 
                         <tr>
                             <td class="table-text">
-                                <div>1</div>
+                                <div>{{$loop->index + 1}}</div>
                             </td>
                             <td class="table-text">
-                                <div>Chin Kai Xiang</div>
+                                <div>{{$user->name}}</div>
                             </td>
                             <td class="table-text">
-                                <div>chinkaixiang123@gmail.com</div>
+                                <div>{{$user->email}}</div>
                             </td>
                             <td class="table-text">
                                 <button class="btnCancel">Revoke</button>
                             </td>
                         </tr>
+                    @endforeach
                     </tbody>
                 </table>
 
@@ -72,15 +74,16 @@
                         </tr>
                     </thead>
                     <tbody>
+                    @foreach($notVerified as $user)
                         <tr>
                             <td class="table-text">
-                                <div>1</div>
+                                <div>{{$loop->index + 1}}</div>
                             </td>
                             <td class="table-text">
-                                <div>Chin Kai Xiang</div>
+                                <div>{{$user->name}}</div>
                             </td>
                             <td class="table-text">
-                                <div>chinkaixiang123@gmail.com</div>
+                                <div>{{$user->email}}</div>
                             </td>
                             <td class="table-text">
                                 <div>
@@ -88,6 +91,7 @@
                                 </div>
                             </td>
                         </tr>
+                    @endforeach
                     </tbody>
                 </table>
             </div>
