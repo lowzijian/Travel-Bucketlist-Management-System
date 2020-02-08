@@ -34,7 +34,7 @@
     </div>
 
     <nav class="container" style="padding-Bottom:0px">
-        <a class="navigationItem" href="{{ url('/')}}"><i class="fa fa-sign-out-alt"></i></a>
+        <a class="navigationItem" href="{{ url('/logout')}}"><i class="fa fa-sign-out-alt"></i></a>
     </nav>
 </header>
 

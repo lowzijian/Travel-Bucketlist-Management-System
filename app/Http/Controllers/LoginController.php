@@ -23,10 +23,16 @@ class LoginController extends Controller
         if($user){
             if($user->verified == 1){
                 if (Auth::attempt($credentials)) {
-                    return redirect('/home');
+                    if($user->admin){
+                        return redirect('/admin');
+                    }else{
+                        return redirect('/home');
+                    }
                 }else{
                     throw ValidationException::withMessages(['errors' => 'Invalid login']);
                 }
+            }else if($user->verified == 2){
+                throw ValidationException::withMessages(['errors' => 'Account is banned']);
             }else{
                 throw ValidationException::withMessages(['errors' => 'User is not verifed']);
             }

@@ -26,4 +26,16 @@ class AdminController extends Controller
             return view('Register.index');
         }
     }
+
+    public function updateUser(Request $request, $id)
+    {
+        if($request->get('type') === 'Accept'){
+            User::where('id', '=', $id)->update(['verified' => 1]);
+        }else if($request->get('type') === 'Reject'){
+            User::where('id', '=', $id)->update(['verified' => 2]);
+        }else if($request->get('type') === 'Revoke'){
+            User::where('id', '=', $id)->update(['verified' => 0]);
+        } 
+        return redirect('/admin');
+    }
 }

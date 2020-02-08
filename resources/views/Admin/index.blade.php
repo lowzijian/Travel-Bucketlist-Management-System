@@ -10,15 +10,16 @@
         </div>
     </div>
 
+    @if (count($verified) > 0)
     <!-- Approved Users table-->
     <div class="container">
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h2>Approved Users</h2>
-                <span class="totalItem">Total approved users : <span class="num">0</span></span>
+                <span class="totalItem">Total approved users : <span class="num">{{count($verified)}}</span></span>
             </div>
             <div class="panel-body container">
-                <!-- <table class="table table-striped task-table">
+                <table class="table table-striped task-table">
                     <thead>
                         <tr>
                             <th>No.</th>
@@ -40,17 +41,18 @@
                                 <div>{{$user->email}}</div>
                             </td>
                             <td class="table-text">
-                                <button class="btnCancel">Revoke</button>
+                            <form action={{"/updateUser/" . $user->id}} method="POST">
+                                <input name="type" type="submit" class="btnCancel" value="Revoke">
+                                <form/>
                             </td>
                         </tr>
                     @endforeach
                     </tbody>
-                </table> -->
-
+                </table>
             </div>
         </div>
     </div>
-
+    @else
     <!-- Without Approved Users-->
     <div class="col-md-12 row flex-center">
         <img src="/asset/img/emptyusers.svg" alt="Empty Users" class="img-EmptyList" />
@@ -59,16 +61,18 @@
             <p>It seems there arent any approved users.</p>
         </div>
     </div>
+    @endif
 
+    @if (count($notVerified) > 0)
     <!-- Pending Users table-->
     <div class="container">
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h2>Pending Users</h2>
-                <span class="totalItem">Total pending users : <span class="num">0</span></span>
+                <span class="totalItem">Total pending users : <span class="num">{{count($notVerified)}}</span></span>
             </div>
             <div class="panel-body container">
-                <!-- <table class="table table-striped task-table">
+                <table class="table table-striped task-table">
                     <thead>
                         <tr>
                             <th>No.</th>
@@ -91,18 +95,21 @@
                             </td>
                             <td class="table-text">
                                 <div>
-                                    <button class="btnAccept">Accept</button> | <button class="btnCancel">Reject</button>
+                                <form action={{"/updateUser/" . $user->id}} method="POST">
+                                @csrf
+                                    <input name="type" type="submit" class="btnAccept" value="Accept">| <input name="type" type="submit" class="btnCancel" value="Reject">
+                                <form/>
                                 </div>
                             </td>
                         </tr>
                     @endforeach
                     </tbody>
-                </table> -->
+                </table>
             </div>
         </div>
 
     </div>
-
+    @else
     <!-- Without Approved Users-->
     <div class="col-md-12 row flex-center">
         <img src="/asset/img/emptyusers.svg" alt="Empty Users" class="img-EmptyList" />
@@ -111,6 +118,6 @@
             <p>It seems there arent any pending users.</p>
         </div>
     </div>
-
+    @endif
 </div>
 @endsection

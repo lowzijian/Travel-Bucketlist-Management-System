@@ -40,4 +40,6 @@ Route::get('/countries', function () {
 //     return view('Admin.index');
 // });
 
-Route::get('/admin', 'AdminController@index');
+Route::get('/admin', 'AdminController@index')->middleware('adminAuth');
+
+Route::post('/updateUser/{id}', 'AdminController@updateUser')->middleware('adminAuth');
