@@ -5,7 +5,7 @@
 <div class="flex-center full-height">
 
     <div style="margin:15px;width:70%">
-        <p class="title" style="margin-bottom:0px">Create a new travel life experience</p>
+        <h1 class="title" style="margin-bottom:0px"> <span class="underline">Create a new travel life experience</span></h1>
     </div>
 
     <div style="margin:15px;width:70%;">

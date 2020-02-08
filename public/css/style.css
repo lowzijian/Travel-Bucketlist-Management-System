@@ -1,6 +1,7 @@
 /*Refer _variable.scss for theme color*/
 @import url("https://fonts.googleapis.com/css?family=Barlow:400,500,700");
-
+@import url('https://fonts.googleapis.com/css?family=Fredoka+One&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Pacifico|Permanent+Marker&display=swap");
 /* scroll bar */
 ::-webkit-scrollbar {
     width: 10px;
@@ -73,11 +74,23 @@ fieldset {
     width: 90%;
 }
 
+.underline {
+    text-decoration: underline;
+    text-decoration-color: #e83f43;
+}
+
 header {
     background-color: #110a6a;
     padding: 5px;
     padding-bottom: 0px;
     position: sticky;
+}
+
+.header {
+    padding: 2.5rem 2.5rem 3rem 2.5rem;
+    background-color: #fbf7f1;
+    margin: 15px;
+    border-radius: 15px;
 }
 
 .navigationItem {
@@ -112,6 +125,7 @@ footer {
 .footerText {
     color: whitesmoke;
     font-size: 12px;
+    font-family: "Barlow", sans-serif;
 }
 
 /*Input form*/
@@ -170,8 +184,12 @@ footer {
 /*Fonts*/
 .num {
     color: #4b3399;
-    font-size: 18px;
     font-weight: 600;
+    padding-left: 15px;
+}
+.totalItem {
+    font-weight: bold;
+    color: #1c1471;
 }
 
 .quote {
@@ -189,38 +207,45 @@ h3 {
 }
 
 .title {
-    font-size: 28px;
     font-weight: bold;
     color: #1c1471;
+    line-height: 1.1;
+    font-family: "Barlow", sans-serif;
 }
 
 .hashtags {
     font-size: 16px;
     color: #a3a0c6;
+    font-family: "Barlow", sans-serif;
 }
 
 .caption {
     font-size: 13px;
     color: #a3a0c6;
+    font-family: "Barlow", sans-serif;
 }
 
 .author {
     font-size: 16px;
     font-weight: bold;
     color: #4b3399;
+    font-family: "Barlow", sans-serif;
 }
 
 .displayName {
     font-size: 30px;
-    font-weight: bold;
     color: #4b3399;
+    font-family: "Pacifico", cursive;
+    font-family: "Permanent Marker", cursive;
 }
 
 .description {
-    font-size: 16px;
     color: black;
     font-weight: normal;
     text-align: justify;
+    font-family: "Barlow", sans-serif;
+    font-size: 1.25rem;
+    margin: 1rem 0 0 0;
 }
 
 .suggestHelperText {
@@ -239,6 +264,14 @@ label {
     font-weight: bold;
     color: #4b3399;
     font-size: 20px;
+    font-family: "Barlow", sans-serif;
+
+}
+
+.caption2 {
+    font-family: 'Fredoka One', cursive;
+    font-size: 16px;
+    color: #1c1471;
 }
 
 /*Icon*/
@@ -249,13 +282,16 @@ label {
     font-size: 20px;
 }
 
-.btnPrimary,.btnCancel,.btnWarning,.btnAccept,.btnOutlined {
+.btnPrimary,
+.btnCancel,
+.btnWarning,
+.btnAccept,
+.btnOutlined {
     font-family: "Barlow", sans-serif;
 }
 
 /* button */
 .btnPrimary {
-    border-radius: 15px;
     border: 1px solid #4b3399;
     padding: 10px;
     width: 100px;
@@ -276,7 +312,6 @@ label {
 }
 
 .btnWarning {
-    border-radius: 15px;
     border: 1px solid red;
     padding: 10px;
     width: 100px;
@@ -319,7 +354,6 @@ label {
 }
 
 .btnOutlined {
-    border-radius: 15px;
     border: 1px solid #4b3399;
     padding: 5px;
     width: 100px;
@@ -384,12 +418,21 @@ label {
 .img-responsive {
 }
 
+.img-header {
+    display: inline-block;
+    min-width: 150px;
+    max-width: 250px;
+    min-height: 150px;
+    max-height: 250px;
+    margin: 15px;
+}
+
 .img-EmptyList {
     display: inline-block;
-    min-width: 200px;
-    max-width: 400px;
-    min-height: 200px;
-    max-height: 400px;
+    min-width: 150px;
+    max-width: 300px;
+    min-height: 150px;
+    max-height: 300px;
     margin: 15px;
 }
 
