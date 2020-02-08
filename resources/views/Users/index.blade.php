@@ -1,17 +1,57 @@
 @extends('layouts.users')
 
 @section('content')
-<div class="flex-center full-height col-md-12 withMarginVertical">
 
-    <div style="margin:15px;width:75%" class="col-md-12">
-        <p class="title" style="margin-bottom:0px">Welcome back <span class="displayName">{{$user->name}}</span></p>
-        <p>Total travel bucketlist's items : <span class="num">{{count($items)}}</span></p>
-        <p class="caption">Last updated at {{$user->updated_at}}</p>
+
+<!-- header welcome back message -->
+<div class="flex-center  col-md-12 withMarginVertical">
+
+    <div class="col-md-12 row header">
+        <div class="container">
+            <div class="col-md-8">
+                <div>
+                    <h1 class="title row"> Welcome back </h1>
+                    <h3 class="row caption2"> our fellow travel buddy </h3>
+                    <h3 class="displayName row" style="font-size: 3.5rem"> <span class="underline">{{$user->name}} </span></h3>
+                </div>
+                <div class="withMarginVertical">
+                    <span class="totalItem row">Total travel bucketlist's items : <span class="num">{{count($items)}}</span></span>
+                    <span class="caption row">Last updated at {{$user->updated_at}}</span>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <img src="/asset/img/travel.svg" alt="Travel Bucketlist" class="img-header" />
+            </div>
+
+        </div>
+
     </div>
+</div>
+
+<!-- weather widget -->
+<div class="col-md-12 withMarginVertical">
+
+    <a class="weatherwidget-io" href="https://forecast7.com/en/3d11101d73/cheras/" data-label_1="CHERAS" data-label_2="WEATHER" data-icons="Climacons Animated" data-mode="Current" data-theme="weather_one">CHERAS WEATHER</a>
+    <script>
+        ! function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (!d.getElementById(id)) {
+                js = d.createElement(s);
+                js.id = id;
+                js.src = 'https://weatherwidget.io/js/widget.min.js';
+                fjs.parentNode.insertBefore(js, fjs);
+            }
+        }(document, 'script', 'weatherwidget-io-js');
+    </script>
+
+</div>
+
+<div class="flex-center  col-md-12 withMarginVertical">
 
     @if (count($items) >> 0)
 
-    <div style="margin:15px;width:75%" class="col-md-12 row">
+    <div class="col-md-12" style="padding: 2.5rem 2.5rem 3rem 2.5rem;">
         <select class="input-form-container col-sm-3" id="filter_country" style="margin:5px">
             <option value="default" selected disabled hidden>Select a Country</option>
             @foreach($countries as $country) {
@@ -35,7 +75,7 @@
 
 
 
-    <div class="content" style="margin:15px;width:80%;overflow:scroll;">
+    <div class="content" style="margin:15px;width:100%;">
         <section id="gallery">
             <div>
                 <div id="image-gallery">
@@ -61,9 +101,7 @@
             </div><!-- End container -->
 
         </section>
-        <div style="margin:15px;" class="flex-center" id="filter_country_info">
-
-        </div>
+        <div style="margin:15px;" class="flex-center" id="filter_country_info"></div>
 
 
     </div>
@@ -81,7 +119,6 @@
     @endif
 
 </div>
-
 
 <script>
     // Gallery image hover

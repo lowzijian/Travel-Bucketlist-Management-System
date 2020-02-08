@@ -1,5 +1,7 @@
 /*Refer _variable.scss for theme color*/
-
+@import url("https://fonts.googleapis.com/css?family=Barlow:400,500,700");
+@import url('https://fonts.googleapis.com/css?family=Fredoka+One&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Pacifico|Permanent+Marker&display=swap");
 /* scroll bar */
 ::-webkit-scrollbar {
     width: 10px;
@@ -20,7 +22,7 @@ body {
     background-color: #fff;
     color: #1c1471;
     font-size: 16px;
-    font-family: "Nunito", sans-serif;
+    font-family: "Barlow", sans-serif;
     font-weight: 200;
     height: 100%;
     margin: 0 auto;
@@ -72,6 +74,11 @@ fieldset {
     width: 90%;
 }
 
+.underline {
+    text-decoration: underline;
+    text-decoration-color: #e83f43;
+}
+
 header {
     background-color: #110a6a;
     padding: 5px;
@@ -79,32 +86,24 @@ header {
     position: sticky;
 }
 
-.adminHeader {
-    background-color: #d9d9d9;
+.header {
+    padding: 2.5rem 2.5rem 3rem 2.5rem;
+    background-color: #fbf7f1;
+    margin: 15px;
+    border-radius: 15px;
 }
 
 .navigationItem {
     padding: 15px;
     color: white;
     text-decoration: none;
+    font-family: "Barlow", sans-serif;
 }
 
 .navigationItem:hover {
     background-color: #00003f;
     text-decoration: none;
     color: white;
-}
-
-.navigationItemAdmin {
-    padding: 15px;
-    color: white;
-    text-decoration: none;
-}
-
-.navigationItemAdmin:hover {
-    background-color: white;
-    text-decoration: none;
-    color: #d9d9d9;
 }
 
 .navigationItem:active {
@@ -126,6 +125,7 @@ footer {
 .footerText {
     color: whitesmoke;
     font-size: 12px;
+    font-family: "Barlow", sans-serif;
 }
 
 /*Input form*/
@@ -184,8 +184,12 @@ footer {
 /*Fonts*/
 .num {
     color: #4b3399;
-    font-size: 18px;
     font-weight: 600;
+    padding-left: 15px;
+}
+.totalItem {
+    font-weight: bold;
+    color: #1c1471;
 }
 
 .quote {
@@ -194,47 +198,54 @@ footer {
     color: #1c1471;
 }
 
-h2,h3 {
-    color: #696780;
-}
-
-h1 {
+h1,
+h2,
+h3 {
     color: #00003f;
+    font-family: "Barlow", sans-serif;
+    font-weight: bold;
 }
 
 .title {
-    font-size: 28px;
     font-weight: bold;
     color: #1c1471;
+    line-height: 1.1;
+    font-family: "Barlow", sans-serif;
 }
 
 .hashtags {
     font-size: 16px;
     color: #a3a0c6;
+    font-family: "Barlow", sans-serif;
 }
 
 .caption {
     font-size: 13px;
     color: #a3a0c6;
+    font-family: "Barlow", sans-serif;
 }
 
 .author {
     font-size: 16px;
     font-weight: bold;
     color: #4b3399;
+    font-family: "Barlow", sans-serif;
 }
 
 .displayName {
     font-size: 30px;
-    font-weight: bold;
     color: #4b3399;
+    font-family: "Pacifico", cursive;
+    font-family: "Permanent Marker", cursive;
 }
 
 .description {
-    font-size: 16px;
     color: black;
     font-weight: normal;
     text-align: justify;
+    font-family: "Barlow", sans-serif;
+    font-size: 1.25rem;
+    margin: 1rem 0 0 0;
 }
 
 .suggestHelperText {
@@ -253,6 +264,14 @@ label {
     font-weight: bold;
     color: #4b3399;
     font-size: 20px;
+    font-family: "Barlow", sans-serif;
+
+}
+
+.caption2 {
+    font-family: 'Fredoka One', cursive;
+    font-size: 16px;
+    color: #1c1471;
 }
 
 /*Icon*/
@@ -262,9 +281,17 @@ label {
     color: #1c1471;
     font-size: 20px;
 }
+
+.btnPrimary,
+.btnCancel,
+.btnWarning,
+.btnAccept,
+.btnOutlined {
+    font-family: "Barlow", sans-serif;
+}
+
 /* button */
 .btnPrimary {
-    border-radius: 15px;
     border: 1px solid #4b3399;
     padding: 10px;
     width: 100px;
@@ -285,7 +312,6 @@ label {
 }
 
 .btnWarning {
-    border-radius: 15px;
     border: 1px solid red;
     padding: 10px;
     width: 100px;
@@ -313,7 +339,6 @@ label {
     color: #b32b26;
 }
 
-
 .btnAccept {
     border: none;
     padding: 10px;
@@ -329,7 +354,6 @@ label {
 }
 
 .btnOutlined {
-    border-radius: 15px;
     border: 1px solid #4b3399;
     padding: 5px;
     width: 100px;
@@ -392,16 +416,24 @@ label {
 }
 
 .img-responsive {
+}
 
+.img-header {
+    display: inline-block;
+    min-width: 150px;
+    max-width: 250px;
+    min-height: 150px;
+    max-height: 250px;
+    margin: 15px;
 }
 
 .img-EmptyList {
     display: inline-block;
-    min-width: 200px;
-    max-width: 400px;
-    min-height: 200px;
-    max-height: 400px;
-    margin:15px;
+    min-width: 150px;
+    max-width: 300px;
+    min-height: 150px;
+    max-height: 300px;
+    margin: 15px;
 }
 
 .img-logo {
@@ -410,7 +442,7 @@ label {
     max-width: 500px;
     min-height: 300px;
     max-height: 300px;
-    margin:15px;
+    margin: 15px;
 }
 
 /*Travel gallery Card Info*/
@@ -459,4 +491,69 @@ label {
     font-size: 16px;
     font-weight: bold;
     color: #a3a0c6;
+}
+
+/*Loader*/
+.loader-wrapper {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #1c1471;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.loader {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    position: relative;
+    border: 4px solid #fff;
+    animation: loader 2s infinite ease;
+}
+
+.loader-inner {
+    vertical-align: top;
+    display: inline-block;
+    width: 100%;
+    background-color: #fff;
+    animation: loader-inner 2s infinite ease-in;
+}
+@keyframes loader {
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(180deg);
+    }
+    50% {
+        transform: rotate(180deg);
+    }
+    75% {
+        transform: rotate(360deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+@keyframes loader-inner {
+    0% {
+        height: 0%;
+    }
+    25% {
+        height: 0%;
+    }
+    50% {
+        height: 100%;
+    }
+    75% {
+        height: 100%;
+    }
+    100% {
+        height: 0%;
+    }
 }

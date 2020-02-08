@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use App\Travel_bucket_item;
 use App\Travel_bucket_country;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 class TravelBucketItemsController extends Controller
 {

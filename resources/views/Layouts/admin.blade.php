@@ -23,13 +23,6 @@
     <!--Bootstrap-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <!--SWAL2-->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
-
-    <script src="sweetalert2.all.min.js"></script>
-    <!-- Optional: include a polyfill for ES6 Promises for IE11 -->
-    <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 </head>
@@ -37,14 +30,11 @@
 <header>
     <div class="container">
         <img src="/asset/img/travel_bucketlist_thumbnail.png" alt="Travel Bucketlist thumbnail">
-        <h1 style="color:white;padding-left: 15px;font-size: 3.25rem;">The Travel Bucketlist</h1>
-
+        <h1 style="color:white;font-size: 3.25rem;">Welcome Back Admin</h1>
     </div>
 
-    <nav class="container" style="padding-Bottom:0px" id="navContainer">
-        <a class="navigationItem" href="{{ url('/home')}}"><i class="fa fa-home"></i> Home</a>
-        <a class="navigationItem" href="{{ url('/create')}}"><i class="fa fa-plus-square"></i> Create</a>
-        <a class="navigationItem" href="{{ url('/logout')}}"><i class="fa fa-sign-out-alt"></i></a>
+    <nav class="container" style="padding-Bottom:0px">
+        <a class="navigationItem" href="{{ url('/')}}"><i class="fa fa-sign-out-alt"></i></a>
     </nav>
 </header>
 
@@ -56,33 +46,18 @@
 
     @yield('content')
 
-    <!-- navbar set active when page changed -->
-    <script>
-        $(document).ready(function() {
-            //Get CurrentUrl variable by combining origin with pathname, this ensures that any url appendings (e.g. ?RecordId=100) are removed from the URL
-            var CurrentUrl = window.location.origin + window.location.pathname;
-            //Check which menu item is 'active' and adjust apply 'active' class so the item gets highlighted in the menu
-            //Loop over each <a> element of the NavMenu container
-            $('#navContainer a').each(function(Key, Value) {
-                //Check if the current url
-                if (Value['href'] === CurrentUrl) {
-                    $(Value).addClass('active');
-                }
-            });
-        });
-    </script>
-
-    <!-- Add in preloader screen -->
     <script>
         $(window).on("load", function() {
             setTimeout(function() {
                 $(".loader-wrapper").fadeOut("slow");
-            }, 1500);
+            }, 2500);
         });
     </script>
 </body>
 
-
+<footer>
+    <p class="footerText">Travel Bucketlist management system &copy; Created by Chin Kai Xiang , Tan Chee Kuan , Lee Hoe Mun , Low Zi Jian.</p>
+</footer>
 
 
 </html>

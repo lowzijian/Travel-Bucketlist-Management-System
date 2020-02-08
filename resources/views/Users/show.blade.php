@@ -13,7 +13,7 @@
 
     <div class="col-md-9" style="margin:10px;margin-top: 30px;">
         <div class="row">
-            <p class="title col-md-12">{{$travelBucketItem[0] -> title}}</p>
+            <h1 class="title col-md-12"><span class="underline">{{$travelBucketItem[0] -> title}}</span></h1>
             <p class="travelLocation col-md-12" style="font-size:18px;"><i class="fa fa-map-marker-alt"></i> {{$travelBucketItem[0] -> city}} , {{$travelBucketItem[0] -> countryName}}</p>
             <p class="hashtags col-md-12">#MeaningfulLife #Thailand</p>
         </div>
@@ -22,7 +22,7 @@
             <p class="description col-md-12">{{$travelBucketItem[0] -> description}}</p>
         </div>
 
-        <div class="row" style="align-items:center;justify-content:center;">
+        <div class="row withMarginVertical" style="align-items:center;justify-content:center;">
             <img src="/{{(json_decode($travelBucketItem[0]->photos))[0]}}" class="img-responsive" style="object-fit:fill;height:350px;width:500px">
         </div>
 

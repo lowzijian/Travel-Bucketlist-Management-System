@@ -29,7 +29,10 @@ DB_PASSWORD= <br>
 6. **Run proper data migration** <br>
 `php artisan migrate`
 
-7. **Serve the program**<br>
+7. **Manually dump countries to travel_bucket_coutries table** <br>
+node .\node-mysql\connect.js
+
+8. **Serve the program**<br>
 `php artisan serve`
 
 
