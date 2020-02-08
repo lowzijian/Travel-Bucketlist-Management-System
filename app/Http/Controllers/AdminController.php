@@ -10,8 +10,8 @@ class AdminController extends Controller
 {
     public function index()
     {
-        $verifiedUser = User::where('verified', '=', 1)->get();
-        $notVerifiedUser = User::where('verified', '=', 0)->get();
+        $verifiedUser = User::where('verified', '=', 1)->where('admin', '=', 0)->get();
+        $notVerifiedUser = User::where('verified', '=', 0)->where('admin', '=', 0)->get();
         return view('Admin.index')->with([
             'verified' => $verifiedUser,
             'notVerified' => $notVerifiedUser
