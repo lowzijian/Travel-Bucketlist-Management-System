@@ -49,8 +49,14 @@
 </header>
 
 <body>
+    <!-- loader -->
+    <div class="loader-wrapper">
+        <span class="loader"><span class="loader-inner"></span></span>
+    </div>
+
     @yield('content')
 
+    <!-- navbar set active when page changed -->
     <script>
         $(document).ready(function() {
             //Get CurrentUrl variable by combining origin with pathname, this ensures that any url appendings (e.g. ?RecordId=100) are removed from the URL
@@ -60,11 +66,18 @@
             $('#navContainer a').each(function(Key, Value) {
                 //Check if the current url
                 if (Value['href'] === CurrentUrl) {
-                    //We have a match, add the 'active' class to the parent item (li element).
                     $(Value).addClass('active');
                 }
             });
         });
+    </script>
+
+    <!-- Add in preloader screen -->
+    <script>
+        $(window).on("load", function() {
+            setTimeout(function(){  $(".loader-wrapper").fadeOut("slow"); }, 3000);
+        });
+
     </script>
 </body>
 
