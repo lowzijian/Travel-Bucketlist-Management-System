@@ -43,21 +43,6 @@ class TravelBucketItemsController extends Controller
             $selected_country = $items[0]->Travel_bucket_country;
         }
 
-        // info($items);
-
-        // function testing() {
-        //     info('Something fishy happens');
-        //     global $items;
-        //     if (empty($items)) {
-        //         info('Something fishy happens');
-        //     }
-        //     // foreach ($items as $item) {
-        //     //     array_push($countries, $item->Travel_bucket_country);
-        //     // }
-        // }
-
-        // testing();
-
         return view('Users.index')->with([
             'user' => $user,
             'items' => $items,
