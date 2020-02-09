@@ -14,17 +14,55 @@ class TravelBucketItemsController extends Controller
     /**
      * Display a listing of the resource.
      *
+     * @param  \Illuminate\Http\Request  $request (Newly added)
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         $user = Auth::user();
-        $countries = Travel_bucket_country::all();
+
+        // To get the countries from all the items
         $items = Travel_bucket_item::where('user_id', '=', $user->id)->with('Travel_bucket_country')->get();
+        $countries = array();
+        foreach ($items as $item) {
+            array_push($countries, $item->Travel_bucket_country);
+        }
+
+        // To apply filters specified by user
+        $has_country_id = $request->has('country_id') && $request->input('country_id') !== 'default';
+        $has_status = $request->has('status') && $request->input('status') !== 'default';
+
+        $items = Travel_bucket_item::where([
+            ['user_id', '=', $user->id],
+            ['country_id', $has_country_id ? '=' : '!=', $request->input('country_id')]
+        ])->with('Travel_bucket_country')->get();
+
+        $selected_country = null;
+        if ($has_country_id) {
+            // Get the info of the selected country
+            $selected_country = $items[0]->Travel_bucket_country;
+        }
+
+        // info($items);
+
+        // function testing() {
+        //     info('Something fishy happens');
+        //     global $items;
+        //     if (empty($items)) {
+        //         info('Something fishy happens');
+        //     }
+        //     // foreach ($items as $item) {
+        //     //     array_push($countries, $item->Travel_bucket_country);
+        //     // }
+        // }
+
+        // testing();
+
         return view('Users.index')->with([
             'user' => $user,
             'items' => $items,
-            'countries' => $countries
+            'countries' => $countries,
+            'selected_country' => $selected_country
         ]);
     }
 
@@ -86,7 +124,7 @@ class TravelBucketItemsController extends Controller
         if (!$travelBucketItem) throw new ModelNotFoundException;
 
         $user = Auth::user();
-        if (!$user) throw new ModelNotFouundException;
+        if (!$user) throw new ModelNotFoundException;
 
         //return $travelBucketItem;
         return view('Users.show', [

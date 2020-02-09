@@ -115,7 +115,7 @@
 
 
             <div class="withMarginVertical content">
-                <input class="btnPrimary" type="submit" id="Create" value="Create" disabled></button>
+                <input class="btnPrimary" type="submit" id="Create" value="Create"></button>
                 <button class="btnCancel" type="button" onclick=" window.location.href= `{{ url('/home')}}`"> Cancel </button>
             </div>
         </form>

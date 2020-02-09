@@ -7,7 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Travel_bucket_country extends Model
 {
     protected $fillable = [
-    
         'name',
         'capital',
         'population',

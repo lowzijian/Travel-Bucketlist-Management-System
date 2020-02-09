@@ -55,7 +55,7 @@
         <select class="input-form-container col-sm-3" id="filter_country" style="margin:5px">
             <option value="default" selected disabled hidden>Select a Country</option>
             @foreach($countries as $country) {
-            <option value={{$country->id}}>{{$country->name}}</option>
+                <option value="{{$country->id}}">{{$country->name}}</option>
             }
             @endforeach
         </select>
@@ -66,7 +66,6 @@
             <option value="visited">Visited</option>
             <option value="notvisited">Not visited</option>
         </select>
-
 
         <button type="button" class="btnPrimary col-sm-2" onclick="filterSelection()" style="margin:5px"> <i class="fa fa-filter" aria-hidden="true"></i> Filter</button>
         <button type="reset" class="btnCancel col-sm-2" onclick="clearSelection()" style="margin:5px">Clear</button>
@@ -101,7 +100,39 @@
             </div><!-- End container -->
 
         </section>
-        <div style="margin:15px;" class="flex-center" id="filter_country_info"></div>
+        <div style="margin:15px;" class="flex-center" id="filter_country_info">
+            @if ($selected_country)
+            <div class="row bucketListCard col-md-12 withMarginVertical">
+                <div class="col-md-4">
+                    <img class="img-fluid" src="{{$selected_country->flag}}" alt="FlagOfTheCountry" style=" object-fit: cover; height: 160px;">
+                </div>
+                <div class="col-md-8 column">
+                    <div class="row">
+                        <p class="locationTitle col-md-3">{{$selected_country->name}}</p>
+                    </div>
+                    <div class="row">
+                        <p class="locationRegion col-md-3">{{$selected_country->region}}</p>
+                    </div>
+                    <div class="row">
+                        <p class="locationLabel col-md-3"> <i class="fa fa-landmark"></i> Captital City</p>
+                        <p class="col-md-3">{{$selected_country->capital}}</p>
+                    </div>
+                    <div class="row">
+                        <p class="locationLabel col-md-3"> <i class="fa fa-users"></i> Population</p>
+                        <p class="col-md-3">{{$selected_country->population}}</p>
+                    </div>
+                    <div class="row">
+                        <p class="locationLabel col-md-3"> <i class="fa fa-language"></i> Languages</p>
+                        <p class="col-md-3">{{$selected_country->languages}}</p>
+                    </div>
+                    <div class="row">
+                        <p class="locationLabel col-md-3"> <i class="fa fa-money-bill-wave"></i> Currencies</p>
+                        <p class="col-md-3">{{$selected_country->currency}} <span class="caption">(؋)</span></p>
+                    </div>
+                </div>
+            </div>
+            @endif
+        </div>
 
 
     </div>
@@ -135,62 +166,66 @@
         }
     );
 
-    // Filter selection
     function filterSelection() {
-        const selected_country_field = document.getElementById('filter_country')
-        const selected_country = selected_country_field.options[selected_country_field.selectedIndex].value
-        const selected_status_field = document.getElementById('filter_status')
-        const selected_status = selected_status_field.options[selected_status_field.selectedIndex].value
-        const country_info = document.getElementById('filter_country_info')
-        console.log(selected_country, 'selected_country')
-        console.log(selected_status, 'selected_status')
+        const country_id = $('#filter_country').children('option:selected').val()
+        const status = $('#filter_status').children('option:selected').val()
 
-        if (selected_country != "default") {
-            country_info.innerHTML = `
-                <div class="row bucketListCard col-md-12 withMarginVertical">
-                <div class="row">
-                    <img class="col-md-3" src="https://restcountries.eu/data/afg.svg" alt="FlagOfTheCountry" style=" object-fit: cover; height: 100px;">
-                    <div class="col-md-9 column">
-                        <div class="row">
-                            <p class="locationTitle col-md-3">Afghanistan</p>
-                        </div>
-                        <div class="row">
-                            <p class="locationRegion col-md-3">Asia</p>
-                        </div>
-                        <div class="row">
-                            <p class="locationLabel col-md-3"> <i class="fa fa-landmark"></i> Captital City</p>
-                            <p class="col-md-3">Kabul</p>
-                        </div>
-                        <div class="row">
-                            <p class="locationLabel col-md-3"> <i class="fa fa-users"></i> Population</p>
-                            <p class="col-md-3">27657145</p>
-                        </div>
-                        <div class="row">
-                            <p class="locationLabel col-md-3"> <i class="fa fa-language"></i> Languages</p>
-                            <p class="col-md-3">Pashto,Uzbek,Turkmen</p>
-                        </div>
-                        <div class="row">
-                            <p class="locationLabel col-md-3"> <i class="fa fa-money-bill-wave"></i> Currencies</p>
-                            <p class="col-md-3">AFN <span class="caption">(؋)</span></p>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-
-                `
-
-        } else {
-            country_info.innerHTML = ``
-        }
-
+        window.location.href = `/home?country_id=${country_id}&status=${status}`;
     }
 
-    function clearSelection() {
-        $('select').prop('selectedIndex', 0);
-        const country_info = document.getElementById('filter_country_info')
-        country_info.innerHTML = ``
+    // Filter selection
+    // function filterSelection() {
+    //     const selected_country_field = document.getElementById('filter_country')
+    //     const selected_country = selected_country_field.options[selected_country_field.selectedIndex].value
+    //     const selected_status_field = document.getElementById('filter_status')
+    //     const selected_status = selected_status_field.options[selected_status_field.selectedIndex].value
+    //     const country_info = document.getElementById('filter_country_info')
+    //     console.log(selected_country, 'selected_country')
+    //     console.log(selected_status, 'selected_status')
 
+    //     if (selected_country != "default") {
+    //         country_info.innerHTML = `
+            //     <div class="row bucketListCard col-md-12 withMarginVertical">
+            //     <div class="row">
+            //         <img class="col-md-3" src="https://restcountries.eu/data/afg.svg" alt="FlagOfTheCountry" style=" object-fit: cover; height: 100px;">
+            //         <div class="col-md-9 column">
+            //             <div class="row">
+            //                 <p class="locationTitle col-md-3">Afghanistan</p>
+            //             </div>
+            //             <div class="row">
+            //                 <p class="locationRegion col-md-3">Asia</p>
+            //             </div>
+            //             <div class="row">
+            //                 <p class="locationLabel col-md-3"> <i class="fa fa-landmark"></i> Captital City</p>
+            //                 <p class="col-md-3">Kabul</p>
+            //             </div>
+            //             <div class="row">
+            //                 <p class="locationLabel col-md-3"> <i class="fa fa-users"></i> Population</p>
+            //                 <p class="col-md-3">27657145</p>
+            //             </div>
+            //             <div class="row">
+            //                 <p class="locationLabel col-md-3"> <i class="fa fa-language"></i> Languages</p>
+            //                 <p class="col-md-3">Pashto,Uzbek,Turkmen</p>
+            //             </div>
+            //             <div class="row">
+            //                 <p class="locationLabel col-md-3"> <i class="fa fa-money-bill-wave"></i> Currencies</p>
+            //                 <p class="col-md-3">AFN <span class="caption">(؋)</span></p>
+            //             </div>
+
+            //         </div>
+            //     </div>
+            // </div>
+
+    //             `
+
+    //     } else {
+    //         country_info.innerHTML = ``
+    //     }
+
+    // }
+
+    function clearSelection() {
+        window.location.href = '/home';
     }
 </script>
 @endsection
