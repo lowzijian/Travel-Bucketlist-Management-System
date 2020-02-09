@@ -39,20 +39,7 @@
 </header>
 
 <body>
-    <!-- loader -->
-    <div class="loader-wrapper">
-        <span class="loader"><span class="loader-inner"></span></span>
-    </div>
-
     @yield('content')
-
-    <script>
-        $(window).on("load", function() {
-            setTimeout(function() {
-                $(".loader-wrapper").fadeOut("slow");
-            }, 2500);
-        });
-    </script>
 </body>
 
 <footer>
