@@ -46,7 +46,7 @@ class TravelBucketItemsController extends Controller
         return view('Users.index')->with([
             'user' => $user,
             'items' => $items,
-            'countries' => $countries,
+            'countries' => array_unique($countries),
             'selected_country' => $selected_country
         ]);
     }

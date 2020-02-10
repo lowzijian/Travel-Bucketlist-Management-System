@@ -40,7 +40,7 @@
     </div>
 
 
-    <div class="flex-center  col-md-12 withMarginVertical">
+    <div class="flex-center col-md-12 withMarginVertical">
 
         <h1 class="title">Explore Your Stories</h1>
         <div class="withMarginVertical">
@@ -50,37 +50,24 @@
 
 
         @if (count($items) >> 0)
-
         <div class="col-md-12" style="padding: 2.5rem 2.5rem 3rem 2.5rem;">
-            <div class="col-md-12 row" style="justify-content: center;">
-
-                <h2 class="col-sm-2" style="text-align: center;padding-top:12px;"> Filter By</h2>
-                <select class="filter-form-container col-sm-3" id="filter_country" style="margin:5px">
-                    <option value="default" selected disabled hidden>Select a Country</option>
-                    @foreach($countries as $country) {
+            <h2 class="col-sm-2" style="text-align:center;padding-top:12px;"> Filter By</h2>
+            <select class="filter-form-container col-sm-3" id="filter_country" style="margin:5px">
+                <option value="default" selected disabled hidden>Select a Country</option>
+                @foreach($countries as $country) {
                     <option value={{$country->id}}>{{$country->name}}</option>
-                    }
-                    @endforeach
-                </select>
+                }
+                @endforeach
+            </select>
 
-                <div class="displayFilteredCountry col-sm-3" style="display: none">
-                    <span class="filteredCountryValue"></span>
-                    <span class="filteredCountryClear"><i class="fas fa-times clearBtn"></i></span>
-                </div>
+            <select class="filter-form-container col-sm-3" id="filter_status" style="margin:5px">
+                <option value="default" selected disabled hidden>Select a status</option>
+                <option value="visited">Visited</option>
+                <option value="notvisited">Not visited</option>
+            </select>
 
-                <select class="filter-form-container col-sm-3" id="filter_status" style="margin:5px">
-                    <option value="default" selected disabled hidden>Select a status</option>
-                    <option value="visited">Visited</option>
-                    <option value="notvisited">Not visited</option>
-                </select>
-
-                <div class="displayFilteredStatus col-sm-3" style="display: none">
-                    <span class="filteredStatusValue"></span>
-                    <span class="filteredStatusClear"><i class="fas fa-times clearBtn"></i></span>
-                </div>
-
-            </div>
-
+            <button type="button" class="btnPrimary col-sm-2" onclick="filterSelection()" style="margin:5px"> <i class="fa fa-filter" aria-hidden="true"></i> Filter</button>
+            <button type="reset" class="btnCancel col-sm-2" onclick="clearSelection()" style="margin:5px">Clear</button>
         </div>
 
 
@@ -177,35 +164,22 @@
             }
         );
 
-        $('#filter_country').on('change', function() {
-            $(this).add('.displayFilteredCountry').toggle();
-            var countries = <?php echo json_encode($countries); ?>;
-            $('.filteredCountryValue', '.displayFilteredCountry').html(countries[this.value].name);
-            filterSelection()
-        });
+        window.onload = () => {
+            const href = window.location.href
+            const params = href.split('?')[1]
+            const { 0: country_id, 1: status } = params.split('&')
 
-        $('.filteredCountryClear', '.displayFilteredCountry').click(function() {
-            $('#filter_country').val('default').fadeIn();
-            $('.displayFilteredCountry').toggle();
-            $('.filteredCountryValue', '.displayFilteredCountry').html('');
-            filterSelection()
-        });
+            if (country_id) {
+                $('#filter_country').val(country_id.split('=')[1])
+            }
 
+            if (status) {
+                $('#filter_status').val(status.split('=')[1])
+            }
 
-        $('#filter_status').on('change', function() {
-            $(this).add('.displayFilteredStatus').toggle();
-            $('.filteredStatusValue', '.displayFilteredStatus').html(this.value);
-            const country_id = $('#filter_country').children('option:selected').val()
-            const status = $('#filter_status').children('option:selected').val()
-            filterSelection()
-        });
-
-        $('.filteredStatusClear', '.displayFilteredStatus').click(function() {
-            $('#filter_status').val('default').fadeIn();
-            $('.displayFilteredStatus').toggle();
-            $('.filteredStatusValue', '.displayFilteredStatus').html('');
-            filterSelection()
-        });
+            console.log(country_id)
+            console.log(status)
+        }
 
         function filterSelection() {
             const country_id = $('#filter_country').children('option:selected').val()
@@ -221,7 +195,10 @@
                 else
                     window.location.href = `/home?country_id=${country_id}&status=${status}`;
             }
+        }
 
+        function clearSelection() {
+            window.location.href = '/home';
         }
     </script>
     @endsection
