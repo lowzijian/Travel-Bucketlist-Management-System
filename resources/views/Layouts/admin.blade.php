@@ -28,12 +28,13 @@
 </head>
 
 <header>
-    <div class="container">
+    <div class="header-container row col-md-12" style="padding-left: 50px;">
         <img src="/asset/img/travel_bucketlist_thumbnail.png" alt="Travel Bucketlist thumbnail">
-        <h1 style="color:white;font-size: 3.25rem;">Welcome Back Admin</h1>
+        <h1 style="color:white;padding-left: 15px;font-size: 3.25rem;">The Travel Bucketlist</h1>
+
     </div>
 
-    <nav class="container" style="padding-Bottom:0px">
+    <nav class="header-container" style="padding-Bottom:0px">
         <a class="navigationItem" href="{{ url('/logout')}}"><i class="fa fa-sign-out-alt"></i></a>
     </nav>
 </header>

@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="flex-center full-height">
+<div class="flex-center full-height col-md-12">
 
     <div style="margin:15px;width:70%">
         <h1 class="title" style="margin-bottom:0px"> <span class="underline">Create a new travel life experience</span></h1>
@@ -44,12 +44,15 @@
             </div>
             <div class="row withMarginVertical">
 
-                <div class="col-md-6 withMarginVertical " style="display: inline-block">
-                    <label> <i class="fa fa-globe-americas"></i> Country</label>
-                    <p class="caption">Select a country</p>
+                <div class="col-md-6 withMarginVertical " style="padding-left:0px">
+                    <div class="col-md-6">
+                        <label> <i class="fa fa-globe-americas"></i> Country</label>
+                        <p class="caption">Select a country</p>
+                    </div>
 
 
-                    <select class="input-form-container required" id="countryField" name="country_id">
+
+                    <select class="input-form-container required" id="countryField" name="country_id" style="max-width: 250px">
                         <option value="" selected disabled hidden>Select a Country</option>
                         @foreach($countries as $country) {
                         <option value={{$country->id}}>{{$country->name}}</option>
@@ -58,9 +61,11 @@
                     </select>
                 </div>
 
-                <div class="col-md-6 withMarginVertical">
-                    <label> <i class="fa fa-city"></i> City</label>
-                    <p class="caption">The destination of your journey</p>
+                <div class="col-md-6 withMarginVertical" style="padding-left:0px">
+                    <div class="col-md-6">
+                        <label> <i class="fa fa-city"></i> City</label>
+                        <p class="caption">The destination of your journey</p>
+                    </div>
 
                     <input type="text" class="input-form-container required" placeholder="Enter a city name" id="cityField" name="city">
                 </div>
@@ -69,16 +74,20 @@
             </div>
             <div class="row withMarginVertical">
 
-                <div class="col-md-3 withMarginVertical">
-                    <label> <i class="fa fa-plane-departure"></i> Start Date</label>
-                    <p class="caption">Departure date</p>
+                <div class="col-md-4 withMarginVertical" style="padding-left:0px">
+                    <div class="col-md-12">
+                        <label> <i class="fa fa-plane-departure"></i> Start Date</label>
+                        <p class="caption">Departure date</p>
+                    </div>
 
                     <input type="date" class="input-form-container" id="startdateField" name="start_date">
                 </div>
 
-                <div class="col-md-3 withMarginVertical">
-                    <label> <i class="fa fa-calendar-alt"></i> End Date</label>
-                    <p class="caption">End date</p>
+                <div class="col-md-4 withMarginVertical" style="padding-left:0px">
+                    <div class="col-md-12">
+                        <label> <i class="fa fa-calendar-alt"></i> End Date</label>
+                        <p class="caption">End date</p>
+                    </div>
 
                     <input type="date" class="input-form-container" id="enddateField" name="end_date">
                 </div>

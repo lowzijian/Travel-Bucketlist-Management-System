@@ -67,7 +67,7 @@ fieldset {
     margin-bottom: 15px;
 }
 
-.container {
+.header-container {
     margin: 0 auto;
     flex-direction: row;
     display: flex;
@@ -492,30 +492,35 @@ label {
 /*Travel Bucket list Card */
 
 .bucketListCard {
-    border-radius: 20px;
     border: 1px solid #3c2294;
     background-color: white;
     padding: 10px;
     color: #1c1471;
     font-size: 16px;
+    font-family: "Barlow", sans-serif;
 }
 
 .locationTitle {
     font-size: 25px;
     font-weight: bold;
     color: #1c1471;
+    font-family: "Barlow", serif;
 }
 
 .locationLabel {
     font-size: 18px;
     font-weight: bold;
     color: #261d8f;
+    font-family: "Barlow", serif;
+
 }
 
 .locationRegion {
     font-size: 16px;
     font-weight: bold;
     color: #a3a0c6;
+    font-family: "Barlow", serif;
+
 }
 
 /*Loader*/
