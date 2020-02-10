@@ -44,7 +44,7 @@
                             <form action={{"/updateUser/" . $user->id}} method="POST">
                                 @csrf
                                 <input name="type" type="submit" class="btnCancel" value="Revoke">
-                                <form/>
+                            </form>
                             </td>
                         </tr>
                     @endforeach
