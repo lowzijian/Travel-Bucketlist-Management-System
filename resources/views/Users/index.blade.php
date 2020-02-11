@@ -49,7 +49,6 @@
         </div>
 
 
-        @if (count($items) >> 0)
         <div class="col-md-12 row" style="padding: 2.5rem 2.5rem 3rem 2.5rem;justify-content:center;">
             <h2 class="col-sm-2" style="text-align:center;padding-top:12px;">Filter By</h2>
             <select class="filter-form-container col-sm-3" id="filter_country" style="margin:5px" onchange="filterSelection()">
@@ -71,7 +70,7 @@
         </div>
 
 
-
+        @if (count($items) >> 0)
         <div class="content" style="margin:15px;width:100%;">
             <section id="gallery">
                 <div>
@@ -125,7 +124,7 @@
                         </div>
                         <div class="row">
                             <p class="locationLabel col-md-3"> <i class="fa fa-money-bill-wave"></i> Currencies</p>
-                            <p class="col-md-3">{{$selected_country->currency}} <span class="caption">(؋)</span></p>
+                            <p class="col-md-3">{{$selected_country->currency}}</p>
                         </div>
                     </div>
                 </div>
