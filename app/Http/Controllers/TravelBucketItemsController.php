@@ -15,20 +15,30 @@ class TravelBucketItemsController extends Controller
         // Convert back to collection
         $item_collection = collect($item);
         $item_json = $item_collection->toJson();
+        $item_decoded = json_decode($item_json);
 
         // toJson() method converts the collection into a JSON serialized string
-        $current_time = time();
-        return (strtotime((json_decode($item_json))->end_date) - $current_time) < 0; 
+        if ($item_decoded->end_date) {
+            $current_time = time();
+            return (strtotime($item_decoded->end_date) - $current_time) < 0;
+        } else {
+            return true;
+        }
     }
 
     function filter_status_not_visited($item) {
         // Convert back to collection
         $item_collection = collect($item);
         $item_json = $item_collection->toJson();
+        $item_decoded = json_decode($item_json);
 
         // toJson() method converts the collection into a JSON serialized string
-        $current_time = time();
-        return (strtotime((json_decode($item_json))->end_date) - $current_time) > 0; 
+        if ($item_decoded->end_date) {
+            $current_time = time();
+            return (strtotime($item_decoded->end_date) - $current_time) > 0;
+        } else {
+            return true;
+        }
     }
 
     /**
