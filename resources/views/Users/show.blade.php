@@ -23,7 +23,11 @@
         </div>
 
         <div class="row withMarginVertical" style="align-items:center;justify-content:center;">
-            <img src="/{{(json_decode($travelBucketItem[0]->photos))[0]}}" class="img-responsive" style="object-fit:fill;height:350px;width:500px">
+            <img src="/{{(json_decode($travelBucketItem[0]->photos))[0]}}" class="img-responsive" style="object-fit: fill;
+                    max-height: 350px;
+                    max-width: 500px;
+                    min-width: 150px;
+                    min-height: 200px;">
         </div>
 
 
