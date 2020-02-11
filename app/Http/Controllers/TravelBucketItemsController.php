@@ -11,6 +11,26 @@ use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 class TravelBucketItemsController extends Controller
 {
+    function filter_status_visited($item) {
+        // Convert back to collection
+        $item_collection = collect($item);
+        $item_json = $item_collection->toJson();
+
+        // toJson() method converts the collection into a JSON serialized string
+        $current_time = time();
+        return (strtotime((json_decode($item_json))->end_date) - $current_time) < 0; 
+    }
+
+    function filter_status_not_visited($item) {
+        // Convert back to collection
+        $item_collection = collect($item);
+        $item_json = $item_collection->toJson();
+
+        // toJson() method converts the collection into a JSON serialized string
+        $current_time = time();
+        return (strtotime((json_decode($item_json))->end_date) - $current_time) > 0; 
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -22,10 +42,10 @@ class TravelBucketItemsController extends Controller
         $user = Auth::user();
 
         // To get the countries from all the items
-        $items = Travel_bucket_item::where('user_id', '=', $user->id)->with('Travel_bucket_country')->get();
+        $items = Travel_bucket_item::where('user_id', '=', $user->id)->with('travel_bucket_country')->get();
         $countries = array();
         foreach ($items as $item) {
-            array_push($countries, $item->Travel_bucket_country);
+            array_push($countries, $item->travel_bucket_country);
         }
 
         // To apply filters specified by user
@@ -34,13 +54,27 @@ class TravelBucketItemsController extends Controller
 
         $items = Travel_bucket_item::where([
             ['user_id', '=', $user->id],
-            ['country_id', $has_country_id ? '=' : '!=', $request->input('country_id')]
-        ])->with('Travel_bucket_country')->get();
+            ['country_id', $has_country_id ? '=' : '!=', $request->input('country_id')],
+        ])->with('travel_bucket_country')->get();
+
+        if ($has_status) {
+            // Note: toArray also converts all of the collection's nested objects to an array.
+            $items = array_filter($items->toArray(), array($this, $request->input('status') === 'visited' ? "filter_status_visited" : "filter_status_not_visited"));
+            $items = collect($items)->values()->toJson();
+            $items = json_decode($items);
+        }
 
         $selected_country = null;
-        if ($has_country_id) {
+        if ($has_country_id && count($items) !== 0) {
             // Get the info of the selected country
-            $selected_country = $items[0]->Travel_bucket_country;
+
+            /*
+                IMPORTANT:
+                Originally, should be able to access the relationship model
+                After json_decode, the relationship linkage will be gone
+                Therefore, try to ensure the naming is consistent
+            */
+            $selected_country = $items[0]->travel_bucket_country;
         }
 
         return view('Users.index')->with([
