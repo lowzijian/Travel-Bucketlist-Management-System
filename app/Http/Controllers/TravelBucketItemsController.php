@@ -20,7 +20,7 @@ class TravelBucketItemsController extends Controller
         // toJson() method converts the collection into a JSON serialized string
         if ($item_decoded->end_date) {
             $current_time = time();
-            return (strtotime($item_decoded->end_date) - $current_time) > 0;
+            return (strtotime($item_decoded->end_date) - $current_time) < 0;
         } else {
             return true;
         }
