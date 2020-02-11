@@ -50,12 +50,12 @@
 
 
         @if (count($items) >> 0)
-        <div class="col-md-12" style="padding: 2.5rem 2.5rem 3rem 2.5rem;">
+        <div class="col-md-12 row" style="padding: 2.5rem 2.5rem 3rem 2.5rem;justify-content:center;">
             <h2 class="col-sm-2" style="text-align:center;padding-top:12px;">Filter By</h2>
             <select class="filter-form-container col-sm-3" id="filter_country" style="margin:5px" onchange="filterSelection()">
                 <option value="default" selected disabled hidden>Select a Country</option>
                 @foreach($countries as $country) {
-                    <option value={{$country->id}}>{{$country->name}}</option>
+                <option value={{$country->id}}>{{$country->name}}</option>
                 }
                 @endforeach
             </select>
@@ -67,7 +67,7 @@
             </select>
 
             <!-- <button type="button" class="btnPrimary col-sm-2" onclick="filterSelection()" style="margin:5px"> <i class="fa fa-filter" aria-hidden="true"></i> Filter</button> -->
-            <button type="reset" class="btnCancel col-sm-2" onclick="clearSelection()" style="margin:5px">Clear</button>
+            <button type="reset" class="btnCancel col-sm-2" onclick="clearSelection()" style="margin:5px" id="clearAllFilter">Clear All</button>
         </div>
 
 
@@ -167,15 +167,18 @@
         window.onload = () => {
             const href = window.location.href
             const params = href.split('?')[1]
-
+            const btnReset = document.getElementById('clearAllFilter')
+            btnReset.style.visibility = 'hidden';
             if (params.includes('country_id')) {
                 $('#filter_country').val(params.split('&')[0].split('=')[1])
                 if (params.includes('status')) {
                     $('#filter_status').val(params.split('&')[1].split('=')[1])
                 }
+                btnReset.style.visibility = '';
             } else {
                 if (params.includes('status')) {
                     $('#filter_status').val(params.split('&')[0].split('=')[1])
+                    btnReset.style.visibility = '';
                 }
             }
         }
