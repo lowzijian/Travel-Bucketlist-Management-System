@@ -78,8 +78,8 @@
                         <div class="row">
                             @foreach($items as $item)
                             <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 image">
-                                <div class="img-wrapper" onclick=" window.location.href= `{{ url('/show')}}`">
-                                    <a href={{"/show/" . $item->id}}><img src="/{{(json_decode($item->photos))[0]}}" class="img-responsive"></a>
+                                <div class="img-wrapper" onclick="show(<?php echo $item->id ?>)">
+                                    <img src="/{{(json_decode($item->photos))[0]}}" class="img-responsive" />
                                     <div class="img-overlay">
                                         <i class="fa fa-plane" aria-hidden="true"></i>
                                     </div>
@@ -200,6 +200,11 @@
 
         function clearSelection() {
             window.location.href = '/home';
+        }
+
+
+        function show(item) {
+            window.location.href = '/show/'+ item;
         }
     </script>
     @endsection
