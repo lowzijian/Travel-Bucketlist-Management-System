@@ -36,20 +36,31 @@
         <div class="row">
             <div class="col-md-12 row">
                 <h3 class="title col-sm-4">Travel Duration :</h3>
+                @if ($travelBucketItem[0] -> start_date && $travelBucketItem[0] -> end_date)
                 <span style="display:grid; " class="col-sm-5">
-                    <span class="title" style="color:#BDB4D9">{{(strtotime($travelBucketItem[0] -> end_date)-strtotime($travelBucketItem[0] -> start_date))/86400}} days</span>
+                    <h3 class="title" style="color:#BDB4D9">{{(strtotime($travelBucketItem[0] -> end_date)-strtotime($travelBucketItem[0] -> start_date))/86400}} days</h3>
                     <span class="caption">Start from {{date("d/m/Y", strtotime($travelBucketItem[0] -> start_date))}} to {{date("d/m/Y", strtotime($travelBucketItem[0] -> end_date))}}</span>
                 </span>
+                @else
+                <span style="display:grid; " class="col-sm-5">
+                    <h3 class="title" style="color:#BDB4D9">None</h3>
+                    <span class="caption">Plan a date to travel</span>
+                </span>
+                @endif
             </div>
 
             <div class="col-md-12 row withMarginVertical">
                 <h3 class="title col-sm-4">Overall Experience :</h3>
-                <span class="title col-sm-5" style="color:#BDB4D9">Happy</span>
+                @if ($travelBucketItem[0] -> experience)
+                <h3 class="title col-sm-5" style="color:#BDB4D9">{{$travelBucketItem[0] -> experience}}</h3>
+                @else
+                <h3 class="title col-sm-5" style="color:#BDB4D9">None</h3>
+                @endif
             </div>
         </div>
 
         <div class="withMarginVertical content" style="float:right;">
-        
+
             <a href={{"/travelBucketItem/edit/" . $travelBucketItem[0]->id}}><button class="btnPrimary" type="submit" id="Edit" name="Edit">Edit <i class="fa fa-edit"></i> </button></a>
             <button class="btnWarning" type="button" onclick="deleteContent()"> <i class="fa fa-trash-alt"></i> </button>
         </div>

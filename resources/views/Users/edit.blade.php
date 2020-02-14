@@ -39,7 +39,7 @@
                     <p class="caption">Describe your journey.</p>
                 </div>
 
-                <textarea class="input-form-container required col-md-12" placeholder="Description of your journey." id="descriptionField" name="description" value="{{$item -> description}}"></textarea>
+                <textarea class="input-form-container required col-md-12" placeholder="Description of your journey." id="descriptionField" name="description" value="{{$item->description}}">{{$item->description}}</textarea>
 
             </div>
             <div class="row withMarginVertical">
@@ -53,7 +53,7 @@
 
 
                     <select class="input-form-container required" id="countryField" name="country_id" style="max-width: 250px">
-                        <option value="" selected disabled hidden>Select a Country</option>
+                        <option selected value={{$item->country_id}}>{{$selectedCountry[0]->name}}</option>
                         @foreach($countries as $country) {
                         <option value={{$country->id}}>{{$country->name}}</option>
                         }
@@ -111,7 +111,7 @@
 
                 <span>
                     <select class="input-form-container" id="emotionField" name="experience" value="{{$item -> experience}}">
-                        <option value="" selected disabled hidden>Select an emotion</option>
+                        <option value="{{$item -> experience}}" selected>{{$item -> experience}}</option>
                         <option value="Excited">Excited</option>
                         <option value="Happy">Happy</option>
                         <option value="Dissapoint">Dissapoint</option>
@@ -134,74 +134,64 @@
 
 </div>
 <script>
+    // $(window).load(function(){
+    //     //info("countryField: ", $item -> country_id);
+    //     //info("emotionField: ", $item -> experience);
+    //     //info("description: ", $item -> description);
+    // })
 
-    $(window).load(function(){
-        //info("countryField: ", $item -> country_id);
-        //info("emotionField: ", $item -> experience);
-        //info("description: ", $item -> description);
-    })
 
+    // window.onload = () => {
+    //     console.log("countryField: ", $item -> country_id);
+    //     console.log("emotionField: ", $item -> experience);
+    //     console.log("description: ", $item -> description);
+    //     //document.getElementById("countryField").value={{$item -> country_id}};
+    //     //document.getElementById("emotionField").value={{$item -> experience}};
+    //     //document.getElementById("descriptionField").value={{$item -> description}};
+    // }
+
+    // window.addEventListener("load",function(){
+    //     //document.getElementById("countryField").value={{$item -> country_id}};
+    //     //document.getElementById("emotionField").value={{$item -> experience}};
+    //     //document.getElementById("descriptionField").value={{$item -> description}};
+    // },false);
 
     window.onload = () => {
-        console.log("countryField: ", $item -> country_id);
-        console.log("emotionField: ", $item -> experience);
-        console.log("description: ", $item -> description);
-        //document.getElementById("countryField").value={{$item -> country_id}};
-        //document.getElementById("emotionField").value={{$item -> experience}};
-        //document.getElementById("descriptionField").value={{$item -> description}};
+        experienceChange()
     }
-
-    window.addEventListener("load",function(){
-        //document.getElementById("countryField").value={{$item -> country_id}};
-        //document.getElementById("emotionField").value={{$item -> experience}};
-        //document.getElementById("descriptionField").value={{$item -> description}};
-    },false);
-
-    // Make sure that all input are not empty , disable register button when necessary
-    $(document).on('change keyup', '.required', function(e) {
-        let Disabled = true;
-        $(".required").each(function() {
-            let value = this.value
-            if ((value) && (value.trim() != '')) {
-                Disabled = false
-            } else {
-                Disabled = true
-                return false
-            }
-        });
-
-        if (Disabled) {
-            $('#Create').prop("disabled", true);
-        } else {
-            $('#Create').prop("disabled", false);
-        }
-    })
-
 
     document.addEventListener('DOMContentLoaded', function() {
         $('#emotionField').on('change', function() {
-            let emoticons = document.getElementById('emotionField').value
-            console.log(emoticons)
-            switch (emoticons) {
-                case 'Excited':
-                    $('#emoticon').find('[data-fa-i2svg]')
-                        .toggleClass('fa-laugh-beam')
-                    break;
-                case 'Happy':
-                    $('#emoticon').find('[data-fa-i2svg]')
-                        .toggleClass('fa-smile')
-                    break;
-                case 'Dissapoint':
-                    $('#emoticon').find('[data-fa-i2svg]')
-                        .toggleClass('fa-frown')
-                    break;
-                case 'Sad':
-                    $('#emoticon').find('[data-fa-i2svg]')
-                        .toggleClass('fa-sad-tear')
-                    break;
-            }
+            experienceChange()
         });
     });
+
+    function experienceChange() {
+        let emoticons = document.getElementById('emotionField').value
+        console.log(emoticons)
+        switch (emoticons) {
+            case 'Excited':
+                $('#emoticon').find('[data-fa-i2svg]')
+                    .toggleClass('fa-laugh-beam')
+                break;
+            case 'Happy':
+                $('#emoticon').find('[data-fa-i2svg]')
+                    .toggleClass('fa-smile')
+                break;
+            case 'Dissapoint':
+                $('#emoticon').find('[data-fa-i2svg]')
+                    .toggleClass('fa-frown')
+                break;
+            case 'Sad':
+                $('#emoticon').find('[data-fa-i2svg]')
+                    .toggleClass('fa-sad-tear')
+                break;
+            default:
+                $('#emoticon').find('[data-fa-i2svg]')
+                    .toggleClass('fa-meh-blank')
+                break;
+        }
+    }
 </script>
 
 
