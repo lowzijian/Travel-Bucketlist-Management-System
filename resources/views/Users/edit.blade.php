@@ -79,8 +79,7 @@
                         <label> <i class="fa fa-plane-departure"></i> Start Date</label>
                         <p class="caption">Departure date</p>
                     </div>
-
-                    <input type="date" class="input-form-container" id="startdateField" name="start_date" value="{{$item -> start_date}}">
+                    <input type="date" class="input-form-container" id="startdateField" name="start_date" value="{{substr($item -> start_date, 0, 10)}}">
                 </div>
 
                 <div class="col-md-4 withMarginVertical" style="padding-left:0px">
@@ -89,7 +88,7 @@
                         <p class="caption">End date</p>
                     </div>
 
-                    <input type="date" class="input-form-container" id="enddateField" name="end_date" value="{{$item -> end_date}}">
+                    <input type="date" class="input-form-container" id="enddateField" name="end_date" value="{{substr($item -> end_date, 0, 10)}}">
                 </div>
             </div>
             <div class="row withMarginVertical">
