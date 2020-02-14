@@ -9,9 +9,9 @@
     </div>
 
     <div style="margin:15px;width:70%;">
-        <form action="/createtravelBucketItem/{$item -> id}" class="col-md-12" method="PUT" enctype='multipart/form-data'>
+        <form action="/travelBucketItem/{{$item -> id}}" class="col-md-12" method="POST" enctype='multipart/form-data'>
             @csrf
-
+            <input name="_method" type="hidden" value="PUT">
             <div class="row withMarginVertical">
 
                 <div class="col-md-8">
@@ -124,7 +124,7 @@
 
 
             <div class="withMarginVertical content">
-                <input class="btnPrimary" type="submit" id="Save" value="Put"></button>
+                <input class="btnPrimary" type="submit" id="Save"></button>
                 <button class="btnCancel" type="button" onclick=" window.location.href= `{{ url('/home')}}`"> Cancel </button>
             </div>
         </form>
