@@ -16,6 +16,7 @@ class Travel_bucket_item extends Model
         'photos',
         'start_date',
         'end_date',
+        'experience',
         'user_id',
     ];
     

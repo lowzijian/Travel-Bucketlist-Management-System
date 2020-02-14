@@ -146,6 +146,7 @@ class TravelBucketItemsController extends Controller
      */
     public function show($id)
     {
+
         //$travelBucketItem = Travel_bucket_item::where('Travel_bucket_items.id','=',$id)->leftJoin('Travel_bucket_countries', 'Travel_bucket_countries.id', '=', 'Travel_bucket_items.country_id')->get();
         $travelBucketItem = DB::select(DB::raw("SELECT i.id, i.updated_at, i.title, i.caption, i.description, i.city, i.photos, i.start_date, i.end_date, c.`name` AS `countryName`
         FROM travel_bucket_items i JOIN travel_bucket_countries c ON i.country_id=c.id WHERE i.id='" . $id . "'"));
@@ -170,7 +171,16 @@ class TravelBucketItemsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $item = Travel_bucket_item::find($id);
+        if(!$item) throw new ModelNotFoundException;
+        
+        //$country = Travel_bucket_country::where('id', '=', $item->country_id)->get();
+        $countries = Travel_bucket_country::all();
+
+		return view('Users.edit', [
+            'item' => $item,
+            'countries' => $countries
+		]);
     }
 
     /**
@@ -182,7 +192,7 @@ class TravelBucketItemsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        return $request;
     }
 
     /**

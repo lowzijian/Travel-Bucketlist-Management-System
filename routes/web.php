@@ -29,6 +29,9 @@ Route::get('/logout', 'Auth\LoginController@logout');
 Route::get('/create', 'TravelBucketItemsController@create');
 Route::post('/create', 'TravelBucketItemsController@store');
 
+Route::get('/travelBucketItem/edit/{id}','TravelBucketItemsController@edit');
+Route::put('/travelBucketItem/{id}','TravelBucketItemsController@update');
+
 Route::get('/show/{id}', 'TravelBucketItemsController@show')->name('travelBucketItem.show');
 
 Route::get('/countries', function () {

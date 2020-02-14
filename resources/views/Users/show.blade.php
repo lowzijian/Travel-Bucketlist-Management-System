@@ -49,7 +49,8 @@
         </div>
 
         <div class="withMarginVertical content" style="float:right;">
-            <button class="btnPrimary" type="submit" id="Edit" name="Edit">Edit <i class="fa fa-edit"></i> </button>
+        
+            <a href={{"/travelBucketItem/edit/" . $travelBucketItem[0]->id}}><button class="btnPrimary" type="submit" id="Edit" name="Edit">Edit <i class="fa fa-edit"></i> </button></a>
             <button class="btnWarning" type="button" onclick="deleteContent()"> <i class="fa fa-trash-alt"></i> </button>
         </div>
     </div>
