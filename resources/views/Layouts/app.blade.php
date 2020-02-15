@@ -37,7 +37,7 @@
 @yield('content')
 
 <footer>
-    <p class="footerText">Travel Bucketlist management system &copy; Created by Chin Kai Xiang , Tan Chee Kuan , Lee Hoe Mun , Low Zi Jian.</p>
+    <span class="footerText">Travel Bucketlist management system &copy; Created by Chin Kai Xiang , Tan Chee Kuan , Lee Hoe Mun , Low Zi Jian.</span>
 </footer>
 
 </html>

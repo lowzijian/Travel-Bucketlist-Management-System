@@ -27,7 +27,12 @@ body {
     font-family: "Barlow", sans-serif;
     font-weight: 200;
     height: 100%;
+    min-height: 100%;
     margin: 0 auto;
+}
+
+body{
+    padding-bottom: 6rem;
 }
 
 .divider {
@@ -121,9 +126,11 @@ footer {
     background-color: #4b3399;
     text-align: center;
     padding: 5px;
+    align-items: center;
     justify-content: center;
-    position: fixed;
     bottom: 0;
+    height: 50px;
+    margin-top: 2%;
     width: 100%;
 }
 
