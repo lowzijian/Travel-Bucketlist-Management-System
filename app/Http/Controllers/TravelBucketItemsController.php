@@ -11,7 +11,8 @@ use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 class TravelBucketItemsController extends Controller
 {
-    function filter_status_visited($item) {
+    function filter_status_visited($item)
+    {
         // Convert back to collection
         $item_collection = collect($item);
         $item_json = $item_collection->toJson();
@@ -26,7 +27,8 @@ class TravelBucketItemsController extends Controller
         }
     }
 
-    function filter_status_not_visited($item) {
+    function filter_status_not_visited($item)
+    {
         // Convert back to collection
         $item_collection = collect($item);
         $item_json = $item_collection->toJson();
@@ -173,16 +175,16 @@ class TravelBucketItemsController extends Controller
     public function edit($id)
     {
         $item = Travel_bucket_item::find($id);
-        if(!$item) throw new ModelNotFoundException;
+        if (!$item) throw new ModelNotFoundException;
 
         $selectedCountry = Travel_bucket_country::where('id', '=', $item->country_id)->get();
         $countries = Travel_bucket_country::all();
 
-		return view('Users.edit', [
+        return view('Users.edit', [
             'item' => $item,
             'countries' => $countries,
             'selectedCountry' => $selectedCountry
-		]);
+        ]);
     }
 
     /**
@@ -197,7 +199,7 @@ class TravelBucketItemsController extends Controller
 
         $current_user = Auth::user();
         $travel_bucket_item = Travel_bucket_item::find($id);
-        $travel_bucket_item -> fill($request->all());
+        $travel_bucket_item->fill($request->all());
         $travel_bucket_item->user_id = $current_user->id;
 
         if (
@@ -223,7 +225,11 @@ class TravelBucketItemsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $travel_bucket_item = Travel_bucket_item::find($id);
+        $travel_bucket_item_title = $travel_bucket_item;
+        $travel_bucket_item->delete();
+        $response = `$travel_bucket_item_title deleted successfully`;
+        return redirect('/home')->with($response);
     }
 
     private function validateRequest()

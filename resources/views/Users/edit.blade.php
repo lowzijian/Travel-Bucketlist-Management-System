@@ -123,7 +123,7 @@
 
 
             <div class="withMarginVertical content">
-                <input class="btnPrimary" type="submit" id="Save" value="Save"></button>
+                <input class="btnPrimary" type="submit" id="Save" value="Save">
                 <button class="btnCancel" type="button" onclick=" window.location.href= `{{ url('/home')}}`"> Cancel </button>
             </div>
         </form>

@@ -60,9 +60,11 @@
         </div>
 
         <div class="withMarginVertical content" style="float:right;">
-
             <a href={{"/travelBucketItem/edit/" . $travelBucketItem[0]->id}}><button class="btnPrimary" type="submit" id="Edit" name="Edit">Edit <i class="fa fa-edit"></i> </button></a>
             <button class="btnWarning" type="button" onclick="deleteContent()"> <i class="fa fa-trash-alt"></i> </button>
+            <form name="deleteForm" method="POST" enctype='multipart/form-data ' action={{"/show/". $travelBucketItem[0]->id}}>
+                @csrf
+            </form>
         </div>
     </div>
 
@@ -80,18 +82,15 @@
             confirmButtonText: 'Delete',
         }).then((result) => {
             if (result.value) {
-                Swal.fire({
-                    allowOutsideClick: false,
-                    title: 'Deleted!',
-                    text: 'This record has been deleted.',
-                    icon: 'success',
-                }).then((result) => {
-                    if (result.value) {
-                        window.location.href = `{{ url('/home')}}`;
-                    }
-                })
+                confirmDelete()
             }
         })
+
+    }
+
+    function confirmDelete() {
+        var deleteForm = document.getElementsByName('deleteForm');
+        deleteForm[0].submit(); // Form submission
     }
 </script>
 

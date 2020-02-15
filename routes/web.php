@@ -33,6 +33,7 @@ Route::get('/travelBucketItem/edit/{id}','TravelBucketItemsController@edit');
 Route::put('/travelBucketItem/{id}','TravelBucketItemsController@update');
 
 Route::get('/show/{id}', 'TravelBucketItemsController@show')->name('travelBucketItem.show');
+Route::post ('/show/{id}', 'TravelBucketItemsController@destroy')->name('travelBucketItem.delete');
 
 Route::get('/countries', function () {
     return view('Users.countries');
