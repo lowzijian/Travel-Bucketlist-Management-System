@@ -450,9 +450,6 @@ label {
     text-overflow: ellipsis;
 }
 
-.img-responsive {
-}
-
 .img-header {
     display: inline-block;
     min-width: 150px;
@@ -478,6 +475,15 @@ label {
     min-height: 300px;
     max-height: 300px;
     margin: 15px;
+}
+
+.img-responsive {
+    max-height: 250px;
+    object-fit: cover;
+}
+
+.img-responsive-large {
+    object-fit: contain;
 }
 
 /*Travel gallery Card Info*/
