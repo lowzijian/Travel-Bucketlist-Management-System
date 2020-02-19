@@ -151,8 +151,9 @@ class TravelBucketItemsController extends Controller
     {
 
         //$travelBucketItem = Travel_bucket_item::where('Travel_bucket_items.id','=',$id)->leftJoin('Travel_bucket_countries', 'Travel_bucket_countries.id', '=', 'Travel_bucket_items.country_id')->get();
-        $travelBucketItem = DB::select(DB::raw("SELECT i.id, i.updated_at, i.title, i.caption, i.description, i.city, i.photos, i.start_date, i.end_date, i.experience ,c.`name` AS `countryName`
-        FROM travel_bucket_items i JOIN travel_bucket_countries c ON i.country_id=c.id WHERE i.id='" . $id . "'"));
+        // $travelBucketItem = DB::select(DB::raw("SELECT i.id, i.updated_at, i.title, i.caption, i.description, i.city, i.photos, i.start_date, i.end_date, i.experience ,c.`name` AS `countryName`
+        // FROM travel_bucket_items i JOIN travel_bucket_countries c ON i.country_id=c.id WHERE i.id='" . $id . "'"));
+        $travelBucketItem = Travel_bucket_item::where('id', '=', $id)->with('travel_bucket_country')->first();
         //where('Travel_bucket_items.id','=',$id)->leftJoin('Travel_bucket_countries', 'Travel_bucket_countries.id', '=', 'Travel_bucket_items.country_id')->get();
         if (!$travelBucketItem) throw new ModelNotFoundException;
 
