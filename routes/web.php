@@ -46,4 +46,4 @@ Route::get('/countries', function () {
 
 Route::get('/admin', 'AdminController@index')->middleware('adminAuth');
 
-Route::post('/updateUser/{id}', 'AdminController@updateUser')->middleware('adminAuth');
+Route::post('/updateUser/{id}', 'AdminController@updateUser');

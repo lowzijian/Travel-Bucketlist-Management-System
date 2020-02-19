@@ -155,6 +155,7 @@ class TravelBucketItemsController extends Controller
         // FROM travel_bucket_items i JOIN travel_bucket_countries c ON i.country_id=c.id WHERE i.id='" . $id . "'"));
         $travelBucketItem = Travel_bucket_item::where('id', '=', $id)->with('travel_bucket_country')->first();
         //where('Travel_bucket_items.id','=',$id)->leftJoin('Travel_bucket_countries', 'Travel_bucket_countries.id', '=', 'Travel_bucket_items.country_id')->get();
+        $this->authorize('view', $travelBucketItem);
         if (!$travelBucketItem) throw new ModelNotFoundException;
 
         $user = Auth::user();
@@ -200,6 +201,7 @@ class TravelBucketItemsController extends Controller
 
         $current_user = Auth::user();
         $travel_bucket_item = Travel_bucket_item::find($id);
+        $this->authorize('update', $travel_bucket_item);
         $travel_bucket_item->fill($request->all());
         $travel_bucket_item->user_id = $current_user->id;
 
@@ -227,6 +229,7 @@ class TravelBucketItemsController extends Controller
     public function destroy($id)
     {
         $travel_bucket_item = Travel_bucket_item::find($id);
+        $this->authorize('delete', $travel_bucket_item);
         $travel_bucket_item_title = $travel_bucket_item;
         $travel_bucket_item->delete();
         $response = `$travel_bucket_item_title deleted successfully`;
