@@ -82,7 +82,9 @@
             let Disabled = true;
             $(".required").each(function() {
                 let value = this.value
-                if ((value) && (value.trim() != '')) {
+                password1 = document.getElementById('passwordField').value
+                password2 = document.getElementById('reenterpasswordField').value
+                if ((value) && (value.trim() != '') && (password1.length >= 8) && (password1 === password2)) {
                     Disabled = false
                 } else {
                     Disabled = true
