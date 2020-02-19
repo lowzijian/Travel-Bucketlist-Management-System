@@ -29,6 +29,7 @@ class AdminController extends Controller
 
     public function updateUser(Request $request, $id)
     {
+        $this->authorize('updateUser', User::class);
         if($request->get('type') === 'Accept'){
             User::where('id', '=', $id)->update(['verified' => 1]);
         }else if($request->get('type') === 'Reject'){
