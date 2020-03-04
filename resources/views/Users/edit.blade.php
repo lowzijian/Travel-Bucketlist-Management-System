@@ -1,7 +1,11 @@
 @extends('layouts.users')
 
 @section('content')
-
+@if($errors->any())
+<div class="alert alert-danger" id="alert" role="alert" style="display: flex; justify-content: space-between">
+    {{$errors->first()}} <i id="closeButton" onclick="closeAlert(event)" class="fas fa-times"></i>
+</div>
+@endif
 <div class="flex-center full-height col-md-12">
 
     <div style="margin:15px;width:70%">
@@ -144,6 +148,11 @@
 
 </div>
 <script>
+    function closeAlert(event){
+        event.stopPropagation()
+        document.getElementById('alert').style.display = 'none'
+    }
+    
     function checkClearableFormInput() {
         let countryField = document.getElementById('countryField')
         let emotionField = document.getElementById('emotionField')

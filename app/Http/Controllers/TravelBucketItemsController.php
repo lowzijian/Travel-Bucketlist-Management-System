@@ -212,26 +212,42 @@ class TravelBucketItemsController extends Controller
      */
     public function update(Request $request, $id)
     {
-
-        $current_user = Auth::user();
-        $travel_bucket_item = Travel_bucket_item::find($id);
-        $this->authorize('update', $travel_bucket_item);
-        $travel_bucket_item->fill($request->all());
-        $travel_bucket_item->user_id = $current_user->id;
-
-        if (
-            $request->hasFile('photos') &&
-            $request->file('photos')->isValid()
-        ) {
-            $photoName = time() . '@' . ($current_user->id) . '.' . request()->photos->getClientOriginalExtension();
-            request()->photos->move(public_path('photos'), $photoName);
-            $path = 'photos' . "\\" . $photoName;
-            $imagePath = array($path);
-            $travel_bucket_item->photos = json_encode($imagePath);
+        try{
+            $request->validate([
+                'title' => 'required',
+                'caption' => 'required',
+                'description' => 'required',
+                'city' => 'required',
+                'start_date' => 'required',
+                'end_date' => 'required',
+                'experience' => 'required',
+                'country_id' => 'required|integer',
+                'photos' => 'required|image'
+            ]);
+    
+            $current_user = Auth::user();
+            $travel_bucket_item = Travel_bucket_item::find($id);
+            $this->authorize('update', $travel_bucket_item);
+            $travel_bucket_item->fill($request->all());
+            $travel_bucket_item->user_id = $current_user->id;
+    
+            if (
+                $request->hasFile('photos') &&
+                $request->file('photos')->isValid()
+            ) {
+                $photoName = time() . '@' . ($current_user->id) . '.' . request()->photos->getClientOriginalExtension();
+                request()->photos->move(public_path('photos'), $photoName);
+                $path = 'photos' . "\\" . $photoName;
+                $imagePath = array($path);
+                $travel_bucket_item->photos = json_encode($imagePath);
+            }
+    
+            $travel_bucket_item->save();
+            return redirect('/home');
+        }catch(ValidationException $exp){
+            return Redirect::back()->withErrors(['errors' => $exp->errors()]);
         }
-
-        $travel_bucket_item->save();
-        return redirect('/home');
+        
     }
 
     /**
