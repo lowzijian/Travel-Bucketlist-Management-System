@@ -39,9 +39,10 @@ class TravelItemPolicy
      * @param  \App\User  $user
      * @return mixed
      */
-    public function create(User $user)
+    public function create(User $user, Travel_bucket_item $travelBucketItem)
     {
         //
+        return $user->id === $travelBucketItem->user_id;
     }
 
     /**
