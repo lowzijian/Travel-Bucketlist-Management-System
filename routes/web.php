@@ -26,7 +26,7 @@ Route::get('/home', 'TravelBucketItemsController@index')->middleware('customAuth
 
 Route::get('/logout', 'Auth\LoginController@logout');
 
-Route::get('/create', 'TravelBucketItemsController@create');
+Route::get('/create', 'TravelBucketItemsController@create')->middleware('customAuth');
 Route::post('/create', 'TravelBucketItemsController@store');
 
 Route::get('/travelBucketItem/edit/{id}','TravelBucketItemsController@edit');
