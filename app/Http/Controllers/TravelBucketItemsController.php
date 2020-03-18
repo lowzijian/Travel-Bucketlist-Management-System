@@ -136,7 +136,7 @@ class TravelBucketItemsController extends Controller
             $travel_bucket_item = new Travel_bucket_item;
             $travel_bucket_item->fill($request->all());
             $travel_bucket_item->user_id = $current_user->id;
-    
+            $this->authorize('create', $travel_bucket_item);
             if (
                 $request->hasFile('photos') &&
                 $request->file('photos')->isValid()
