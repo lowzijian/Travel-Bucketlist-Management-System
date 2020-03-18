@@ -163,19 +163,13 @@ class TravelBucketItemsController extends Controller
      */
     public function show($id)
     {
-
-        //$travelBucketItem = Travel_bucket_item::where('Travel_bucket_items.id','=',$id)->leftJoin('Travel_bucket_countries', 'Travel_bucket_countries.id', '=', 'Travel_bucket_items.country_id')->get();
-        // $travelBucketItem = DB::select(DB::raw("SELECT i.id, i.updated_at, i.title, i.caption, i.description, i.city, i.photos, i.start_date, i.end_date, i.experience ,c.`name` AS `countryName`
-        // FROM travel_bucket_items i JOIN travel_bucket_countries c ON i.country_id=c.id WHERE i.id='" . $id . "'"));
         $travelBucketItem = Travel_bucket_item::where('id', '=', $id)->with('travel_bucket_country')->first();
-        //where('Travel_bucket_items.id','=',$id)->leftJoin('Travel_bucket_countries', 'Travel_bucket_countries.id', '=', 'Travel_bucket_items.country_id')->get();
         $this->authorize('view', $travelBucketItem);
         if (!$travelBucketItem) throw new ModelNotFoundException;
 
         $user = Auth::user();
         if (!$user) throw new ModelNotFoundException;
 
-        //return $travelBucketItem;
         return view('Users.show', [
             'travelBucketItem' => $travelBucketItem,
             'user' => $user,
@@ -264,21 +258,6 @@ class TravelBucketItemsController extends Controller
         $travel_bucket_item->delete();
         $response = `$travel_bucket_item_title deleted successfully`;
         return redirect('/home')->with($response);
-    }
-
-    private function validateRequest()
-    {
-        return request()->validate([
-            'title' => 'required',
-            'caption' => 'required',
-            'description' => 'required',
-            'country_id' => 'required',
-            'photos' => 'sometimes|file|image|max:5000',
-            'city' => 'required',
-            'start_date' => 'sometimes',
-            'end_date' => 'sometimes',
-            'user_id' => 'required'
-        ]);
     }
 
     private function storeImage($travel_bucket_item)
