@@ -493,6 +493,9 @@ label {
     color: #1c1471;
     display: block;
     text-align: justify;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .travelLocation {

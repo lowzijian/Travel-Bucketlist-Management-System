@@ -16,7 +16,7 @@
             @csrf
             <div class="input-container">
                 <i class="far fa-envelope icon input-form-icon"></i>
-                <input type="email" name="email" class="input-form-container" placeholder="Enter your username" id="email">
+                <input type="email" name="email" class="input-form-container" placeholder="Enter your email" id="email">
             </div>
 
             <div class="input-container">
